@@ -35,7 +35,7 @@ a{
     /* padding-top: 40px; */
     position: relative;
 }
-#body-header ul{
+#big-screen-ul{
     list-style: none;
     margin: 0;
     /* margin-top: ; */
@@ -49,14 +49,17 @@ a{
     left: 50%;
     /* text-align: center; */
 }
-#body-header ul li a{
+#big-screen-ul li a{
     color: white;
     font-weight: 700;
     transition: 0.2s ease;
 }
-#body-header ul li a:hover{
+#big-screen-ul li a:hover{
     text-decoration: underline;
     color: rgb(0, 0, 0);
+}
+#d-small-screen{
+    display: none;
 }
 #personal-details{
     text-align: center;
@@ -119,6 +122,125 @@ main>section{
     margin-top: -70px;
     position: relative;
 }
+
+/* work experience */
+#experience-container{
+    width: 100%;
+    /* height: 600px; */
+    /* border: 1px solid black; */
+    position: relative;
+}
+.experience{
+    width: 40%;
+    height: 200px;
+    /* border: 1px solid black; */
+    margin: 6px;
+    position: relative;
+    left: 5%;
+    padding: 6px;
+    background-color: lightgray;
+    border-radius: 8px;
+}
+#internsElite::after{
+    content: "";
+    background-image: url(assets/img/experience/internselite.jpg);
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-position: center;
+    margin-left: 5px;
+    background-blend-mode: exclusion;
+    border-radius: 50%;
+}
+#vit::after{
+    content: "";
+    background-image: url(assets/img/experience/vit.png);
+    display: inline-block;
+    width: 20px;
+    aspect-ratio: 1/1;
+    background-size: contain;
+    background-position: center;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+#dcfl::after{
+    content: "";
+    background-image: url(assets/img/experience/dcfl.jpg);
+    display: inline-block;
+    width: 20px;
+    aspect-ratio: 1/1;
+    background-size: contain;
+    background-position: center;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+#dps::after{
+    content: "";
+    background-image: url(assets/img/experience/dps.jpg);
+    display: inline-block;
+    width: 20px;
+    aspect-ratio: 1/1;
+    background-size: contain;
+    background-position: center;
+    margin-left: 5px;
+    border-radius: 50%;
+}
+.experience-head{
+    margin-bottom: 0;
+}
+.experience-timeframe{
+    margin-top: 0;
+    font-size: smaller;
+}
+.experience-list{
+    /* list-style: none; */
+    padding-left: 20px;
+    /* color: red; */
+}
+.experience:nth-child(2n+1)::after{
+    content: "";
+    width: 10px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: gray;
+    position: absolute;
+    top: 35%;
+    right: -15.35%;
+    z-index: 1;
+}
+.experience:nth-child(2n)::after{
+    content: "";
+    width: 10px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: gray;
+    position: absolute;
+    top: 35%;
+    left: -13.15%;
+    z-index: 1;
+}
+.experience:nth-child(2n){
+    left: 55%;
+}
+
+.timeline-divider{
+    position: absolute;
+    left: 51%;
+    height: 70%;
+    top: 10%;
+    width: 0px;
+    border: 2px dashed lightgray;
+    text-align: center;
+}
+.timeline-traveller{
+    position: sticky;
+    top: 10%;
+    transform: rotate(90deg);
+    color: skyblue;
+    z-index: 2;
+}
+
 /* skills */
 #skills{
     background-color: rgba(206, 206, 206, 0.232);
@@ -278,4 +400,123 @@ main>section{
     width: 50%;
     margin: 0 auto;
     text-align: center;
+}
+@media screen {
+    #personal-details{
+        /* right: 50%; */
+        left: 35%;
+    }
+    .experience{
+        width: 100%;
+    }
+    .experience:nth-child(2n){
+        left: 5%;
+    }
+    .experience:nth-child(2n+1)::after{
+        content: "";
+        width: 10px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: gray;
+        position: absolute;
+        top: 35%;
+        right: unset;
+        left: -7.5%;
+        z-index: 1;
+    }
+    .experience:nth-child(2n)::after{
+        content: "";
+        width: 10px;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: gray;
+        position: absolute;
+        top: 35%;
+        left: -7.5%;
+        /* right: -15.35%; */
+        z-index: 1;
+    }
+    .timeline-divider{
+        left: 0%;
+    }
+    #contact-section{
+        display: unset;
+    }
+    #contact-section>div{
+        width: 100%;
+        gap: 30px;
+    }
+    @media screen and (max-width: 600px) {
+        #big-screen-ul{
+            display: none;
+        }
+        #d-small-screen{
+            display: unset;
+            position: absolute;
+            top: 5%;
+            right: 0;
+            padding-top: 20px;
+            padding-right: 20px;
+            text-align: right;
+            /* position: relative; */
+        }
+        #hamburger-icon{
+            color: white;
+            background-color: #9c61515d;
+            padding: 10px;
+        }
+        #small-screen-ul{
+            background-color: #9c61515d;
+            list-style: none;
+            text-align: left;
+            padding: 10px;
+            display: none;
+            position: absolute;
+            right: 10%;
+            top: 70%;
+        }
+        #d-small-screen:hover #small-screen-ul{
+            display: unset;
+        }
+        #small-screen-ul li a{
+            color: white;
+        }
+        #personal-details{
+            right: 50%;
+            left: 20%;
+        }
+        .experience{
+            width: 100%;
+        }
+        .experience:nth-child(2n){
+            left: 5%;
+        }
+        .experience:nth-child(2n+1)::after{
+            content: "";
+            width: 10px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background-color: gray;
+            position: absolute;
+            top: 35%;
+            right: unset;
+            left: -8%;
+            z-index: 1;
+        }
+        .experience:nth-child(2n)::after{
+            content: "";
+            width: 10px;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            background-color: gray;
+            position: absolute;
+            top: 35%;
+            left: -8%;
+            /* right: -15.35%; */
+            z-index: 1;
+        }
+        .timeline-divider{
+            left: 0%;
+        }
+    }
 }

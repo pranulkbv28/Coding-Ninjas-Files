@@ -10,7 +10,7 @@
 <body>
     <header id="body-header">
         <div class="overlay">
-            <ul>
+            <ul id="big-screen-ul">
                 <li>
                     <a href="#">Home</a>
                 </li>
@@ -33,6 +33,32 @@
                     <a href="#contact">Contact</a>
                 </li>
             </ul>
+            <div id="d-small-screen">
+                    <i id="hamburger-icon" class="fa-solid fa-bars"></i>
+                    <ul id="small-screen-ul">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#about">About</a>
+                        </li>
+                        <li>
+                            <a href="#skills">Skills</a>
+                        </li>
+                        <li>
+                            <a href="#experience">Experience</a>
+                        </li>
+                        <li>
+                            <a href="#education">Education</a>
+                        </li>
+                        <li>
+                            <a href="#portfolio">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+            </div>
             <div id="personal-details">
                 <h1>
                     Pranaav B V
@@ -116,8 +142,106 @@
                 </div>
             </div>
         </section>
-        <section id="experience"></section>
-        <section id="education"></section>
+        <section id="experience">
+            <div class="ta-center section-headers">
+                <h1>
+                    <i class="fa-solid fa-briefcase"></i> <span>Work Experience</span>
+                </h1>
+            </div>
+            <div class="section-content">
+                <div id="experience-container">
+                    <div class="experience">
+                        <h3 class="experience-head" id="internsElite">
+                            <a href="https://internselite.com/">
+                                InternsElite
+                            </a>
+                        </h3>
+                        <p class="experience-timeframe">
+                            <em>From April 2023 to Jun3 2023</em>
+                        </p>
+                        <p class="experience-desc">
+                            <ul class="experience-list">
+                                <li>Developed an e-Commerce website</li>
+                                <li>Reduced website load time by 27%</li>
+                                <li>Integrated an automated image slider </li>
+                                <li>90% SEO optimisation, 94% best practise</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="experience"></div>
+                    <div class="experience"></div>
+                    <div class="timeline-divider">
+                        <div class="timeline-traveller">
+                            <i class="fa-solid fa-plane"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="education">
+            <div class="ta-center section-headers">
+                <h1>
+                    <i class="fa-solid fa-school"></i> <span>Education Experience</span>
+                </h1>
+            </div>
+            <div class="section-content">
+                <div id="experience-container">
+                    <div class="experience">
+                        <h3 class="experience-head" id="vit">
+                            <a href="https://vit.ac.in/">
+                                Vellore Institute of Technology
+                            </a>
+                        </h3>
+                        <p class="experience-timeframe">
+                            <em>2020-2024</em>
+                        </p>
+                        <p class="experience-desc">
+                            <ul class="experience-list">
+                                <li>Completed my Bachelor's in Technolgy Degree here</li>
+                                <li>Took up Electronics and Communication Engineering</li>
+                                <li>Made a lot of projects in this field</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="experience">
+                        <h3 class="experience-head" id="dcfl">
+                            <a href="https://deekshalearning.com/college/main-campus-bengaluru/">
+                                Deeksha Centre for Learning
+                            </a>
+                        </h3>
+                        <p class="experience-timeframe">
+                            <em>2018-2020</em>
+                        </p>
+                        <p class="experience-desc">
+                            <ul class="experience-list">
+                                <li>Completed my Higher Secondary education in this Institute</li>
+                                <li>My elective was Computer Science</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="experience">
+                        <h3 class="experience-head" id="dps">
+                            <a href="https://south.dpsbangalore.edu.in/">
+                                Delhi Public School, Bangalore - South
+                            </a>
+                        </h3>
+                        <p class="experience-timeframe">
+                            <em>2012-2018</em>
+                        </p>
+                        <p class="experience-desc">
+                            <ul class="experience-list">
+                                <li>Completed schooling here.</li>
+                            </ul>
+                        </p>
+                    </div>
+                    <div class="timeline-divider">
+                        <div class="timeline-traveller">
+                            <i class="fa-solid fa-car-side"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="padbot-40" id="portfolio">
             <div class="ta-center section-headers">
                 <h1>
@@ -170,7 +294,7 @@
                 </h1>
             </div>
             <div class="section-content">
-                <div id="contact-section" class="flex">
+                <div id="contact-section">
                     <div id="contact-form">
                         <form id="messageForm" action="">
                             <input type="text" name="name" id="name" placeholder="Your Name">
