@@ -1,0 +1,246 @@
+*{
+    box-sizing: border-box;
+    /* padding-top: 100px; */
+}
+body{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+/* Start of main header */
+#main-header{
+    position: fixed;
+    z-index: 99;
+    /* margin-top: 100px; */
+    width: 100%;
+    background-color: rgb(236,232,227);
+}
+#main-header nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 0;
+    flex-wrap: wrap;
+    /* gap: 400px; */
+}
+#main-header nav>div{
+    width: 50%;
+}
+
+#nav-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 200px;
+}
+
+/* logo-container */
+#logo-container a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+#logo{
+    width: 70px;
+    aspect-ratio: 1/1;
+}
+#logo-container span{
+    font-size: 26px;
+    font-family: Agbalumo;
+}
+
+/* nav-icons */
+#nav-icons{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.icon{
+    position: relative;
+}
+.icon-label{
+    border: 1px solid black;
+    padding: 2px 4px;
+    font-size: 12px;
+    position: absolute;
+    bottom: -40%;
+    /* right: -500%; */
+    display: none;
+}
+.icon:hover .icon-label{
+    display: unset;
+}
+
+
+/* flex-container */
+.flex-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    /* gap: 100px; */
+}
+/* search-bar */
+#search-bar form{
+    width: 200%;
+    display: flex;
+    justify-content: right;
+    gap: 5px;
+}
+#search-bar form input{
+    width: 100%;
+    /* border-right: none; */
+}
+#search-bar form input:focus{
+    outline: 1px solid royalblue;
+}
+#search-bar form button{
+    /* border-left: none; */
+    cursor: pointer;
+}
+#search-bar form input, #search-bar form button{
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+}
+/* pfp */
+#pfp img{
+    width: 50px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+}
+.burger-icon{
+    display: none;
+}
+/* End of main header */
+
+
+/* Start of main-body */
+#main-body{
+    padding-top: 100px;
+    display: flex;
+}
+
+/* artist-section */
+#artist-section{
+    width: 70%;
+}
+#artist-section>section{
+    width: 80%;
+    margin: 0 auto 50px;
+
+}
+#about-section{
+    background-color: rgba(236, 232, 227, 0.381);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+.img-container{
+    text-align: center;
+}
+.img-container img{
+    width: 350px;
+    /* aspect-ratio: 1/1; */
+    height: 250px;
+}
+#about-section p{
+    text-align: justify;
+}
+
+
+/* song-section */
+.song-tab{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(236, 232, 227, 0.381);
+    border-radius: 10px;
+    padding: 6px 14px;
+    margin-bottom: 20px;
+}
+.song-deets{
+    display: flex;
+    align-items: center;
+    gap: 70px;
+}
+.song-name{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.song-name img{
+    width: 50px;
+    aspect-ratio: 1/1;
+}
+.song-name p{
+    margin: 0;
+    text-align: right;
+    font-size: 10px;
+}
+.like-and-add{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* queue-section */
+#queue-section{
+    width: 30%;
+}
+#queue-section>section{
+    width: 80%;
+    margin: 0 auto 40px;
+    /* background-color: rgba(236, 232, 227, 0.381);
+    border-radius: 10px;
+    padding: 6px 14px; */
+}
+/* #similar-artists{
+    
+    margin-bottom: 20px;
+} */
+.section-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.section-header>p{
+    font-size: 12px;
+    color: grey;
+}
+.deets{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.deets img{
+    width: 100px;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+}
+/* recently-played */
+.recently-played-songs{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.recently-played-deets{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.recently-played-artist{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.recently-played-artist img{ 
+    width: 40px;
+    aspect-ratio: 1/1;
+}
+.recently-played-artist p{
+    margin: 0;
+}
+/* End of main-body */

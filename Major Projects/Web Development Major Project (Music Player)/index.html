@@ -23,13 +23,13 @@
                     </a>
                 </div>
                 <div id="nav-icons">
-                    <a href="index.html" class="icon">
+                    <a class="d-none" href="index.html" class="icon">
                         <i class="fa-solid fa-house"></i>
                         <div class="icon-label">
                             Home
                         </div>
                     </a>
-                    <a href="index.html" class="icon">
+                    <a class="d-none" href="index.html" class="icon">
                         <i class="fa-regular fa-heart"></i>
                         <div class="icon-label">
                             Favourites
@@ -37,14 +37,22 @@
                     </a>
                 </div>
             </div>
-            <div id="search-bar">
-                <form action="">
-                    <input type="text" name="search" id="song-search" placeholder="Enter song name or Play song audio">
-                    <button id="search-btn" type="submit">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </button>
-                </form>
-            </div>            
+            <div class="flex-container">
+                <div id="search-bar">
+                    <form action="">
+                        <input type="text" name="search" id="song-search" placeholder="Enter song name or Play song audio">
+                        <button id="search-btn" type="submit">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="d-none" id="pfp">
+                    <img src="./assets/images/pfp2.jpg" alt="">
+                </div>  
+                <div class="burger-icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>      
         </nav>
     </header>
     <!-- End of main header -->
@@ -64,52 +72,52 @@
                         Latest Release
                     </a>
                 </h3>
-                <div class="latest-release-card-container">
+                <div class="flex-wrap latest-release-card-container">
                     <div class="latest-release-card">
                         <div class="latest-release-song">
                             <img src="./assets/images/latest-release.jpg" alt="latest-release">
-                            <div>
+                            <div class="d-none-1400">
                                 <p>Chaleya</p>
                                 <p>Jawan</p>
                             </div>
                         </div>
-                        <div class="more">
+                        <div class="d-none-1400 more">
                             <i class="fa-solid fa-ellipsis"></i>
                         </div>
                     </div>
                     <div class="latest-release-card">
                         <div class="latest-release-song">
                             <img src="./assets/images/latest-release.jpg" alt="latest-release">
-                            <div>
+                            <div class="d-none-1400">
                                 <p>Chaleya</p>
                                 <p>Jawan</p>
                             </div>
                         </div>
-                        <div class="more">
+                        <div class="d-none-1400 more">
                             <i class="fa-solid fa-ellipsis"></i>
                         </div>
                     </div>
                     <div class="latest-release-card">
                         <div class="latest-release-song">
                             <img src="./assets/images/latest-release.jpg" alt="latest-release">
-                            <div>
+                            <div class="d-none-1400">
                                 <p>Chaleya</p>
                                 <p>Jawan</p>
                             </div>
                         </div>
-                        <div class="more">
+                        <div class="d-none-1400 more">
                             <i class="fa-solid fa-ellipsis"></i>
                         </div>
                     </div>
                     <div class="latest-release-card">
                         <div class="latest-release-song">
                             <img src="./assets/images/latest-release.jpg" alt="latest-release">
-                            <div>
+                            <div class="d-none-1400">
                                 <p>Chaleya</p>
                                 <p>Jawan</p>
                             </div>
                         </div>
-                        <div class="more">
+                        <div class="d-none-1400 more">
                             <i class="fa-solid fa-ellipsis"></i>
                         </div>
                     </div>
@@ -122,10 +130,10 @@
                     </a>
                 </h3>
                 <div class="featured-artists-container">
-                    <div class="featured-artists-card">
-                        <a href="">
+                    <div class="hover-effect featured-artists-card">
+                        <a href="./edsheeran.html">
                             <img src="./assets/images/featuredArtist/1.jpg" alt="">
-                            <div class="play-btn">
+                            <div class="hover-sym">
                                 <i class="fa-solid fa-play"></i>
                             </div>
                         </a>
@@ -133,10 +141,10 @@
                             Ed Sheeran
                         </p>
                     </div>
-                    <div class="featured-artists-card">
+                    <div class="hover-effect featured-artists-card">
                         <a href="">
                             <img src="./assets/images/featuredArtist/2.jpg" alt="">
-                            <div class="play-btn">
+                            <div class="hover-sym">
                                 <i class="fa-solid fa-play"></i>
                             </div>
                         </a>
@@ -144,10 +152,10 @@
                             Jack Johnson
                         </p>
                     </div>
-                    <div class="featured-artists-card">
+                    <div class="hover-effect featured-artists-card">
                         <a href="">
                             <img src="./assets/images/featuredArtist/3.jpg" alt="">
-                            <div class="play-btn">
+                            <div class="hover-sym">
                                 <i class="fa-solid fa-play"></i>
                             </div>
                         </a>
@@ -155,10 +163,10 @@
                             Dallas Green
                         </p>
                     </div>
-                    <div class="featured-artists-card">
+                    <div class="hover-effect featured-artists-card">
                         <a href="">
                             <img src="./assets/images/featuredArtist/4.jpg" alt="">
-                            <div class="play-btn">
+                            <div class="hover-sym">
                                 <i class="fa-solid fa-play"></i>
                             </div>
                         </a>
@@ -166,10 +174,10 @@
                             Jason Mraz
                         </p>
                     </div>
-                    <div class="featured-artists-card">
+                    <div class="hover-effect featured-artists-card">
                         <a href="">
                             <img src="./assets/images/featuredArtist/5.jpg" alt="">
-                            <div class="play-btn">
+                            <div class="hover-sym">
                                 <i class="fa-solid fa-play"></i>
                             </div>
                         </a>
@@ -177,10 +185,10 @@
                             José González
                         </p>
                     </div>
-                    <div class="featured-artists-card">
+                    <div class="hover-effect featured-artists-card">
                         <a href="">
                             <img src="./assets/images/featuredArtist/6.jpg" alt="">
-                            <div class="play-btn">
+                            <div class="hover-sym">
                                 <i class="fa-solid fa-play"></i>
                             </div>
                         </a>
@@ -190,12 +198,591 @@
                     </div>
                 </div>
             </div>
+            <div id="playlists-for-you">
+                <h3>
+                    <a class="featured-headings" href="">
+                        Playlists For You
+                    </a>
+                </h3>
+                <div class="playlists-for-you-container">
+                    <div class="hover-effect playlists-for-you-card">
+                        <a href="">
+                            <img src="./assets/images/playlistsForYou/1.jpg" alt="">
+                            <div class="hover-sym">
+                                Happy Mood
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hover-effect playlists-for-you-card">
+                        <a href="">
+                            <img src="./assets/images/playlistsForYou/2.jpg" alt="">
+                            <div class="hover-sym">
+                                Love Songs
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hover-effect playlists-for-you-card">
+                        <a href="">
+                            <img src="./assets/images/playlistsForYou/3.jpg" alt="">
+                            <div class="hover-sym">
+                                Acoustic Vibes
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hover-effect playlists-for-you-card">
+                        <a href="">
+                            <img src="./assets/images/playlistsForYou/4.jpg" alt="">
+                            <div class="hover-sym">
+                                Good VIbes
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hover-effect playlists-for-you-card">
+                        <a href="">
+                            <img src="./assets/images/playlistsForYou/5.jpg" alt="">
+                            <div class="hover-sym">
+                                Bolly Acou
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hover-effect playlists-for-you-card">
+                        <a href="">
+                            <img src="./assets/images/playlistsForYou/6.jpg" alt="">
+                            <div class="hover-sym">
+                                Kannada Acoustic
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="popular-playlists">
+                <h3>
+                    <a class="featured-headings" href="">
+                        Popular Playlists
+                    </a>
+                </h3>
+                <div class="popular-playlists-container">
+                    <div class="hover-effect popular-playlists-card">
+                        <a href="">
+                            <img src="./assets/images/playlistsForYou/1.jpg" alt="">
+                            <div class="hover-sym">
+                                Happy Mood
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hover-effect popular-playlists-card">
+                        <a href="">
+                            <img src="./assets/images/playlistsForYou/2.jpg" alt="">
+                            <div class="hover-sym">
+                                Love Songs
+                            </div>
+                        </a>
+                    </div>
+                    <div class="hover-effect popular-playlists-card">
+                        <a href="">
+                            <img src="./assets/images/playlistsForYou/3.jpg" alt="">
+                            <div class="hover-sym">
+                                Acoustic Vibes
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="english latest">
+                <h3>
+                    <a class="featured-headings" href="">
+                        Latest in English
+                    </a>
+                </h3>
+                <div class="latest-container">
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/1.jpg" alt="">
+                        <figcaption>
+                            <p>Heat Waves</p>
+                            <p>Glass Animals - Cover by Jasmine Thompson</p>
+                        </figcaption>
+                    </div>
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/2.jpg" alt="">
+                        <figcaption>
+                            <p>Stay</p>
+                            <p>The Kid Laroi and Justin Bieber - Cover by Ryan Hurd and Maren Morris</p>
+                        </figcaption>
+                    </div>
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/3.jpg" alt="">
+                        <figcaption>
+                            <p>As It Was</p>
+                            <p>Harry Styles</p>
+                        </figcaption>
+                    </div>
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/4.jpg" alt="">
+                        <figcaption>
+                            <p>About Damn Time</p>
+                            <p>Lizzo</p>
+                        </figcaption>
+                    </div>
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/5.jpg" alt="">
+                        <figcaption>
+                            <p>Industry Baby</p>
+                            <p>Lil Nas X and Jack Harlow</p>
+                        </figcaption>
+                    </div>
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/6.jpg" alt="">
+                        <figcaption>
+                            <p>Bad Habits</p>
+                            <p>Ed Sheeran - Cover by Gavin James</p>
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
+            <div class="latest">
+                <h3>
+                    <a class="featured-headings" href="">
+                        Latest in Hindi
+                    </a>
+                </h3>
+                <div class="latest-container">
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/1.jpg" alt="">
+                        <figcaption>
+                            <p>Heat Waves</p>
+                            <p>Glass Animals - Cover by Jasmine Thompson</p>
+                        </figcaption>
+                    </div>
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/2.jpg" alt="">
+                        <figcaption>
+                            <p>Stay</p>
+                            <p>The Kid Laroi and Justin Bieber - Cover by Ryan Hurd and Maren Morris</p>
+                        </figcaption>
+                    </div>
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/3.jpg" alt="">
+                        <figcaption>
+                            <p>As It Was</p>
+                            <p>Harry Styles</p>
+                        </figcaption>
+                    </div>
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/4.jpg" alt="">
+                        <figcaption>
+                            <p>About Damn Time</p>
+                            <p>Lizzo</p>
+                        </figcaption>
+                    </div>
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/5.jpg" alt="">
+                        <figcaption>
+                            <p>Industry Baby</p>
+                            <p>Lil Nas X and Jack Harlow</p>
+                        </figcaption>
+                    </div>
+                    <div class="latest-card">
+                        <img src="./assets/images/latest/6.jpg" alt="">
+                        <figcaption>
+                            <p>Bad Habits</p>
+                            <p>Ed Sheeran - Cover by Gavin James</p>
+                        </figcaption>
+                    </div>
+                </div>
+            </div>
         </section>
-        
+        <aside class="d-none" id="aside-section">
+            <div id="aside-container">
+                <header id="aside-header">
+                    <h2>
+                        <a class="featured-headings" href="">
+                            Queue
+                        </a>
+                    </h2>
+                    <p>
+                        Queue &ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;&ThickSpace;<span><i class="fa-solid fa-chevron-down"></i></span>
+                    </p>
+                </header>
+                <main id="aside-main">
+                    <!-- <table>
+
+                    </table> -->
+                    <div class="queue-card">
+                        <div class="song-number">
+                            01
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="">
+                                <img src="./assets/images/latest/1.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        Heat Waves
+                                    </b>
+                                </p>
+                                <p>
+                                    Glass Animals
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            02
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="">
+                                <img src="./assets/images/latest/2.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        Stay
+                                    </b>
+                                </p>
+                                <p>
+                                    The Kid Laroi
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            03
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="">
+                                <img src="./assets/images/latest/3.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        As It Was
+                                    </b>
+                                </p>
+                                <p>
+                                    Harry Styles
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            04
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="">
+                                <img src="./assets/images/latest/4.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        About Damn Time
+                                    </b>
+                                </p>
+                                <p>
+                                    Lizzo
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            05
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="">
+                                <img src="./assets/images/latest/5.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        Industry Baby
+                                    </b>
+                                </p>
+                                <p>
+                                    Lil Nas X
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            06
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="#active-footer">
+                                <img src="./assets/images/latest/6.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        Bad Habits
+                                    </b>
+                                </p>
+                                <p>
+                                    Ed Sheeran
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            01
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="">
+                                <img src="./assets/images/latest/1.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        Heat Waves
+                                    </b>
+                                </p>
+                                <p>
+                                    Glass Animals
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            02
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="">
+                                <img src="./assets/images/latest/2.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        Stay
+                                    </b>
+                                </p>
+                                <p>
+                                    The Kid Laroi
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            03
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="">
+                                <img src="./assets/images/latest/3.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        As It Was
+                                    </b>
+                                </p>
+                                <p>
+                                    Harry Styles
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            04
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="">
+                                <img src="./assets/images/latest/4.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        About Damn Time
+                                    </b>
+                                </p>
+                                <p>
+                                    Lizzo
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            05
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="">
+                                <img src="./assets/images/latest/5.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        Industry Baby
+                                    </b>
+                                </p>
+                                <p>
+                                    Lil Nas X
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    <div class="queue-card">
+                        <div class="song-number">
+                            06
+                        </div>
+                        <div class="song-deets">
+                            <a class="" href="#active-footer">
+                                <img src="./assets/images/latest/6.jpg" alt="">
+                                <div>
+                                    <i class="fa-solid fa-play"></i> 
+                                </div>
+                            </a>
+                            <div class="song-deets-name">
+                                <p>
+                                    <b>
+                                        Bad Habits
+                                    </b>
+                                </p>
+                                <p>
+                                    Ed Sheeran
+                                </p>
+                            </div>
+                        </div>
+                        <div class="like-btn">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>  
+                </main>
+            </div>
+        </aside>
 
 
     </main>
     <!-- End of main body -->
+
+
+    <!-- Start of footer -->
+    <footer id="active-footer">
+        <div id="active-song">
+            <div class="active-song-deets">
+                <div class="active-song-name">
+                    <img src="./assets/images/latest/6.jpg" alt="">
+                    <div class="active-song-artist">
+                        <p>
+                            <b>
+                                Bad Habits
+                            </b>
+                        </p>
+                        <p>
+                            Ed Sheeran
+                        </p>
+                    </div>
+                </div>
+                <div class="like-and-remove">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-circle-minus"></i>
+                </div>
+            </div>
+            <div class="active-song-controls">
+                <div class="song-controls">
+                    <div class="d-none-900">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </div>
+                    <div class="d-none-900">
+                        <i class="fa-solid fa-forward fa-rotate-180"></i>
+                    </div>
+                    <i class="fa-regular fa-circle-pause"></i>
+                    <div class="d-none-900">
+                        <i class="fa-solid fa-forward"></i>
+                    </div>
+                    <div class="d-none-900">
+                        <i class="fa-solid fa-repeat"></i>
+                    </div>
+                </div>
+                <div class="song-duration">
+                    <div class="song-completion"></div>
+                    <div class="song-cursor"></div>
+                </div>
+            </div>
+            <div class="active-song-music-control">
+                <i class="fa-solid fa-list"></i>
+                <i class="fa-solid fa-computer"></i>
+                <i class="fa-solid fa-volume-high"></i>
+                <div class="vol-meter">
+                    <div class="vol-completion"></div>
+                    <div class="vol-cursor"></div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End of footer -->
 
 
 
