@@ -1,6 +1,5 @@
 *{
     box-sizing: border-box;
-    /* padding-top: 100px; */
 }
 body{
     margin: 0;
@@ -14,7 +13,6 @@ a{
 #main-header{
     position: fixed;
     z-index: 99;
-    /* margin-top: 100px; */
     width: 100%;
     background-color: rgb(236,232,227);
 }
@@ -24,7 +22,6 @@ a{
     align-items: center;
     padding: 0 0 0 0;
     flex-wrap: wrap;
-    /* gap: 400px; */
 }
 #main-header nav>div{
     width: 50%;
@@ -66,7 +63,6 @@ a{
     font-size: 12px;
     position: absolute;
     bottom: -40%;
-    /* right: -500%; */
     display: none;
 }
 .icon:hover .icon-label{
@@ -79,7 +75,6 @@ a{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* gap: 100px; */
 }
 /* search-bar */
 #search-bar form{
@@ -90,13 +85,11 @@ a{
 }
 #search-bar form input{
     width: 100%;
-    /* border-right: none; */
 }
 #search-bar form input:focus{
     outline: 1px solid royalblue;
 }
 #search-bar form button{
-    /* border-left: none; */
     cursor: pointer;
 }
 #search-bar form input, #search-bar form button{
@@ -130,8 +123,6 @@ a{
     width: 80%;
     margin: 0 auto;
     margin-bottom: 40px;
-    /* border: 1px solid black; */
-    /* padding: 20px; */
 }
 #featured-playlists{
     display: flex;
@@ -144,9 +135,6 @@ a{
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
-/* #featured-playlists:hover{
-    gap: 4px;
-} */
 #featured-playlists:hover img{
     filter: opacity(0.6);
     transform: scale(0.9);
@@ -179,7 +167,6 @@ a{
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 20px;
-    /* flex-wrap: wrap; */
 }
 /* latest-release-card */
 .latest-release-card{
@@ -196,7 +183,6 @@ a{
 }
 .latest-release-song>img{
     width: 150px;
-    /* border-radius: 20px; */
 }
 .latest-release-song>div p{
     margin: 0;
@@ -234,7 +220,6 @@ a{
     aspect-ratio: 1/1;
     border-radius: 50%;
     transition: all 0.2s ease-in-out;
-    /* z-index: 2; */
 }
 
 .hover-sym{
@@ -244,12 +229,10 @@ a{
     color: white;
     z-index: -99;
     transition: bottom 0.2s ease-in-out;
-    /* display: none; */
 }
 .hover-effect:hover .hover-sym{
     bottom: 50%;
     z-index: unset;
-    /* filter: opacity(0.4); */
 }
 .hover-effect:hover img{
     filter: brightness(0.7);
@@ -328,7 +311,6 @@ a{
 .latest-card img{
     width: 100%;
     aspect-ratio: 1/1;
-    /* border-radius: 8px; */
     transition: all 0.2s ease-in-out;
 }
 .latest-card figcaption>p{
@@ -340,7 +322,6 @@ a{
 /* Start of aside-section */
 #aside-section{
     width: 30%;
-    /* overflow-y: scroll; */
 }
 #aside-section>div{
     width: 70%;
@@ -553,7 +534,6 @@ footer{
     }
     .latest-release-song>img{
         width: 100%;
-        /* border-radius: 20px; */
     }
 }
 @media screen and (max-width: 1100px) {
@@ -579,7 +559,6 @@ footer{
     }
     .active-song-controls{
         margin: 0 auto;
-        /* background-color: red; */
     }    
 }
 @media screen and (max-width: 686px) {
