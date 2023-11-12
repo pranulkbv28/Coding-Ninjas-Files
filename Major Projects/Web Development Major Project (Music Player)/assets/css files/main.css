@@ -119,7 +119,7 @@ a{
 /* Start of main body */
 
 #main-body{
-    padding-top:100px;
+    padding:100px 0;
     display: flex;
 }
 /* song-section */
