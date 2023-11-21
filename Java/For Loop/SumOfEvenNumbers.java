@@ -12,6 +12,9 @@ class SumOfEvenNumbers {
 			}
         }
 		System.out.println(num);
+        
+
+
         sc.close();
     }    
 }

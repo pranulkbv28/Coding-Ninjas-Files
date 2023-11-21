@@ -5,7 +5,7 @@ class FirstFourEvenNumbers {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of even numbers to be printed: ");
         int n = sc.nextInt();
-        int loop = 0;
+        // int loop = 0;
 
         // for(int i=1; i<50; i++){
         //     if(i%2==0){
@@ -24,5 +24,7 @@ class FirstFourEvenNumbers {
                 }
             }
         }
+
+        sc.close();
     }
 }
