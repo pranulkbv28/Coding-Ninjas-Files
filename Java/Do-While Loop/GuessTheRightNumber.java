@@ -1,8 +1,12 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class GuessTheRightNumber {
     public static void main(String[] args) {
-        int randomNumber = (int) Math.floor((Math.random()*9)+1);
+        // int randomNumber = (int) Math.floor((Math.random()*9)+1);
+        Random random = new Random();
+        int randomNumber = random.nextInt(10);
+        System.out.println("The right answe is: "+randomNumber);
         Scanner sc = new Scanner(System.in);
         // int randomNumber = 4;
         int guessedNumber;
