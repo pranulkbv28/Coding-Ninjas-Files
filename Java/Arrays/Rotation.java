@@ -10,18 +10,22 @@ class Rotation {
 
     }
     public static int[] leftRotation(int []a, int rotCount){
+        // this is reversing the array from index(0) to index((a.length)-rotCount-1)
         for(int l=0, r=((a.length)-rotCount-1);r>l;l++,r--){
             swap(a, l, r);
         }
+        // this is reversing the array from index((a.length)-rotCount) to index((a.length)-1)
         for(int l=((a.length)-rotCount), r=((a.length)-1);r>l;l++,r--){
             swap(a, l, r);
         }
         return a;
     }
     public static int[] rightRoatation(int []a, int rotCount){
+        // this is reversing the array from index(0) to  index(rotCount-1)
         for(int l=0, r=(rotCount-1);r>l;l++,r--){
             swap(a, l, r);
         }
+        // this is reversing the array from index(rotCount) to  index((a.length)-1)
         for(int l=rotCount, r=((a.length)-1);r>l;l++,r--){
             swap(a, l, r);
         }

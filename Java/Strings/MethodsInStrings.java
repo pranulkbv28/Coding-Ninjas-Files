@@ -33,7 +33,7 @@ class MethodsInStrings {
 
         // 7. replace(), it replaces the older values to newer values
         String replacedString = str.replace("o", "@");
-        System.out.println("The SString when all the 'o' are replaced with '@': "+replacedString);
+        System.out.println("The String when all the 'o' are replaced with '@': "+replacedString);
 
         // 8. indexOf(), this gives us the 1st index of the inputted char from the starting of the String
         int firstindex = str.indexOf('o');

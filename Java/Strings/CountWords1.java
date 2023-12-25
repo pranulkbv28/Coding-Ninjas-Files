@@ -19,5 +19,5 @@ class CountWords1 {
         String str = sc.nextLine();
         countWords(str);
         sc.close();
-    }    
+    }
 }
