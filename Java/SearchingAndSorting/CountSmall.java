@@ -10,7 +10,7 @@ public class CountSmall {
             int count=0;
             int j=0;
             while(j<m){
-                if(a[i]>b[j]){
+                if(a[i]>=b[j]){
                     count++;
                 }
                 j++;
