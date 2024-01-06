@@ -7,7 +7,6 @@ class Rotation {
         int temp = a[left];
         a[left] = a[right];
         a[right] = temp;
-
     }
     public static int[] leftRotation(int []a, int rotCount){
         // this is reversing the array from index(0) to index((a.length)-rotCount-1)
