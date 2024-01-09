@@ -4,12 +4,6 @@ import java.util.Scanner;
 
 public class QuickSort {
     public static void quickSort(int[] input, int startIndex, int endIndex) {
-		/* Your class should be named Solution
-		 * Don't write main().
-		 * Don't read input, it is passed as function argument.
-		 * No need to print or return the output.
-		 * Taking input and printing output is handled automatically.
-		 */
 		if(startIndex>=endIndex){
 			return;
 		}
