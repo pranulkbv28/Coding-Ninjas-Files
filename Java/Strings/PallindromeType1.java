@@ -27,6 +27,5 @@ class PallindromeType1 {
             }else{
                 System.out.println("Is not a pallindrome");
             }
-        sc.close();
     }    
 }
