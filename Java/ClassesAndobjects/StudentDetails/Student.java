@@ -10,8 +10,8 @@ public class Student {
 
     
     
-    public void printDOB(){
-        System.out.println(dob);
+    public String printDOB(){
+        return dob;
     }
     public static void main(String[] args) {
         Student student = new Student();
