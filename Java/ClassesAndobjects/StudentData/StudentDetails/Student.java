@@ -1,4 +1,4 @@
-package ClassesAndobjects.StudentDetails;
+package ClassesAndobjects.StudentData.StudentDetails;
 
 public class Student {
     String name="Pranaav";
@@ -9,21 +9,32 @@ public class Student {
     private String dob="28/02/2002";
 
     
-    
+    public Student(String n, int num, String dob){
+        name=n;
+        rollNumber=num;
+        this.dob=dob;
+    }
+
+
+    public void setDOB(String dateOfBirth){
+        dob = dateOfBirth;
+        // System.out.println(dob);
+    }
     public String printDOB(){
         return dob;
     }
     public static void main(String[] args) {
-        Student student = new Student();
-        System.out.println(student.dob);
-        student.printDOB();
+        // Student student = new Student();
+        // System.out.println(student.dob);
+        // student.printDOB();
         // this works because the method is created inside the Student class
+        // we can also use a direct method.
     }
 }
 class Test{
     public static void main(String[] args) {
-        Student s3 = new Student();
-        Student s4 = new Student();
+        Student s3 = new Student("Pranaav", 20483, "28/02/2002");
+        Student s4 = new Student("Vaisnavi", 20484, "03/08/2002");
         System.out.println(s3.name+" "+s3.rollNumber);
         System.out.println(s4.name+" "+s4.rollNumber);
         // System.out.println(s3);
