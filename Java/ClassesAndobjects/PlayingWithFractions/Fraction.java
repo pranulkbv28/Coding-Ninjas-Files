@@ -49,18 +49,39 @@ public class Fraction {
     public void print(){
         System.out.println(numerator+"/"+denominator);
     }
-    public void add(Fraction f2){
-        // if(denominator1!=denominator2){
-        //     numerator1*=denominator2;
-        //     denominator1*=denominator2;
-        //     numerator2*=denominator1;
-        //     denominator2*=denominator1;
-        // }
-        // numerator=numerator1+numerator2;
-        // denominator=denominator1;
-        // simplify();
-        this.numerator = (this.numerator*f2.denominator)+(f2.numerator*this.denominator);
-        this.denominator=this.denominator*f2.denominator;
-        simplify();
+    // public void add(Fraction f2){
+    //     this.numerator = (this.numerator*f2.denominator)+(f2.numerator*this.denominator);
+    //     this.denominator=this.denominator*f2.denominator;
+    //     simplify();
+    // }
+    public static Fraction add(Fraction f1, Fraction f2){
+        int newNumerator = (f1.numerator*f2.denominator)+(f2.numerator*f1.denominator);
+        int newDenominator = f1.denominator*f2.denominator;
+        Fraction f = new Fraction(newNumerator, newDenominator);
+        return f;
+    }
+    // public void multiply(Fraction f2){
+    //     this.numerator*=f2.numerator;
+    //     this.denominator*=f2.denominator;
+    //     simplify();
+    // }
+    public static Fraction multiply(Fraction f1, Fraction f2){
+        int newNumerator = f1.numerator*f2.numerator;
+        int newDenominator = f1.denominator*f2.denominator;
+        Fraction f = new Fraction(newNumerator, newDenominator);
+        return f;
+    }
+    public static Fraction subtract(Fraction f1, Fraction f2){
+        int newNumerator = (f1.numerator*f2.denominator)-(f2.numerator*f1.denominator);
+        int newDenominator = f1.denominator*f2.denominator;
+        Fraction f = new Fraction(newNumerator, newDenominator);
+        return f;
+    }
+    public static Fraction divide(Fraction f1, Fraction f2){
+        int temp = f2.numerator;
+        f2.numerator=f2.denominator;
+        f2.denominator=temp;
+        Fraction f = Fraction.multiply(f1, f2);
+        return f;
     }
 }
