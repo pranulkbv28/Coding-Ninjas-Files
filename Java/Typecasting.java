@@ -14,5 +14,6 @@ class Typecasting {
         // Explicit
         short year = (short)(currentYear - age); //here, we have explicitly mentioned that our operation's value should have the data type of "short".
         
+        System.out.println(birthYear+" "+year);
     }    
 }
