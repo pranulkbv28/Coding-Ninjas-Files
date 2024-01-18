@@ -25,6 +25,7 @@ class VarSession {
         String myName = "Pranaav B V";
 
         System.out.println(myName);
+        System.out.println(z);
 
     
     
