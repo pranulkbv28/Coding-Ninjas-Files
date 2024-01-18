@@ -3,7 +3,7 @@ import java.util.Scanner;
 class SumOfEvenNumbers {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in); sc.close();
-        Scanner s = new Scanner(System.in);
+        Scanner s = new Scanner(System.in); s.close();
             int n = s.nextInt();
             int num = 0;
             int i;

@@ -7,7 +7,7 @@ class ReverseTheArray {
         Scanner sc = new Scanner(System.in);
         System.out.print("\n"+str);
         int input = sc.nextInt();
-        // sc.close();
+        sc.close();
         return input;
     }    
     public static void reverse(int arr[], int size){

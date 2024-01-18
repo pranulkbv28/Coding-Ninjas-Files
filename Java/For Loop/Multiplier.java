@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class Multiplier {
     public static void main(String [] args){
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); sc.close();
 
 		int n = sc.nextInt();
 
