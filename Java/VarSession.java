@@ -26,9 +26,5 @@ class VarSession {
 
         System.out.println(myName);
         System.out.println(z);
-
-    
-    
-    
     }
 }
