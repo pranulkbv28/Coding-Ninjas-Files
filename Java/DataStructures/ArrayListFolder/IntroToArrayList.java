@@ -16,6 +16,7 @@ public class IntroToArrayList {
         for(int j=0; j<arr.size();j++){
             System.out.print(arr.get(j)+" ");
         }
+        System.out.println();
         System.out.println(arr.size());
         System.out.println(arr.get(2));
         arr.remove(2);
