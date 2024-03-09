@@ -64,6 +64,8 @@ public class BalancedBinaryTree {
 
         return isLeftBalanced && isRightBalanced;
 
+        
+
     }
 
     public static void main(String[] args) {
