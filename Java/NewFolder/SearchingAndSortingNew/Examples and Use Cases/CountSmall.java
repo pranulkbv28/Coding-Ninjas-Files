@@ -50,8 +50,7 @@ public class CountSmall {
     public static int[] countSmall(int a[], int b[], int n, int m) {
         insertionSort(a, n);
         insertionSort(b, m);
-        int c[] = new int[n]; // this array has the size "n" because we have to check wrt to the elements of
-                              // the 1st array.
+        int c[] = new int[n]; // this array has the size "n" because we have to check wrt to the elements of the 1st array.
         // int countArr[] = pushingCounts(a, b, c, n, m);
         int j = 0;
         for (int i = 0; i < n; i++) {
