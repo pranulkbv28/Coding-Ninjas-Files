@@ -31,11 +31,46 @@
 ### Miscellanious
 
 - try out these:
-  - alert("Hello World");
-  - console.log("Hello World");
-  - console.warn("Hello World");
-  - console.error("Hello World");
-  - console.info("Hello World");
-  - console.table({name: "John", age: 30});
-  - confirm("Are you sure?");
-  - prompt("What is your name?"");
+
+```javascript
+alert("Hello World");
+console.log("Hello World");
+console.warn("Hello World");
+console.error("Hello World");
+console.info("Hello World");
+console.table({name: "John", age: 30});
+confirm("Are you sure?");
+prompt("What is your name?");
+```
+
+### Control Flow
+
+#### IF Statement
+
+```javascript
+if (condition) {
+  // code to be executed if the condition is true
+}
+```
+
+#### IF-ELSE Statement
+
+```javascript
+if (condition) {
+  // code to be executed if the condition is true
+} else {
+  // code to be executed if the condition is false
+}
+```
+
+#### IF-ELSE-IF Statement
+
+```javascript
+if (condition) {
+  // code to be executed if the condition is true
+} else if (condition) {
+  // code to be executed if the condition is false
+} else (condition) {
+  // code to be executed if the condition is false
+}
+```
