@@ -326,3 +326,60 @@ arr2.push(4);
 console.log(arr2); // prints [1, 2, 3, 4]
 console.log(arr1); // prints [1, 2, 3]
 ```
+
+### Strings
+
+- Strings in `JavaScript` are **immutable**. This means, a string cannot be modified after it is created.
+- Strings in `JavaScript` are **zero-indexed**. This means, the first character of a string is at index 0.
+- Strings in `JavaScript` are **dynamic**. This means, the length of a string can be changed at runtime.
+
+#### String Methods
+
+- `length` returns the length of a string.
+- `charAt` returns the character at a given index in a string.
+- `charCodeAt` returns the Unicode code point of a character at a given index in a string.
+- `indexOf` returns the index of a substring in a string.
+- `lastIndexOf` returns the index of the last occurrence of a substring in a string.
+- `includes` returns a boolean value indicating whether a substring is present in a string.
+- `replace` replaces a substring with another substring in a string.
+- `replaceAl` replaces all occurrences of a substring with another substring in a string.
+- `trim` removes leading and trailing whitespace from a string.
+- `split` splits a string into an array of substrings.
+- `slice` returns a substring of a string.
+- `substring` returns a substring of a string.
+
+### Objects
+
+- Objects in `JavaScript` are **mutable**. This means, an object can be modified after it is created.
+- Objects in `JavaScript` are **dynamic**. This means, the number of properties in an object can be changed at runtime.
+- Objects in `JavaScript` are **key-value pairs**. This means, each property in an object is a key-value pair.
+
+```javascript
+const myObj = {
+  name:  "Alexa",
+  age: 10,
+  hobby: "Daancing",
+  100: "hundred",
+  show: function () {
+    console.log("Hello World")
+  } // these are called anonymous functions as there is no name assigned to them
+}
+```
+
+- to access the properties of an object, we use the `dot notation`.
+- to access the properties of an object, we use the `bracket notation`.
+
+```javascript
+const myObj = {
+  name:  "Alexa",
+  age: 10,
+  hobby: "Daancing",
+  100: "hundred",
+  show: function () {
+    console.log("Hello World")
+  }
+}
+
+console.log(myObj.name); // prints Alexa
+console.log(myObj["age"]); // prints 10
+```
