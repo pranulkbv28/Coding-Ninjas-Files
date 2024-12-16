@@ -476,7 +476,7 @@ Your birth year is 2000
 
 - The call stack is a list of functions that are currently executing.
 
-## scope
+## Scope
 
 ### Types
 
