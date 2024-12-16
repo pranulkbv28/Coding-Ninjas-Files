@@ -383,3 +383,95 @@ const myObj = {
 console.log(myObj.name); // prints Alexa
 console.log(myObj["age"]); // prints 10
 ```
+
+## Execution Context
+
+### Phases
+
+- Creation Phase: This is the phase where the `JavaScript Engine` initiates the variables, functions, and objects defined in the code. The values are not assigned yet.
+
+- Execution Phase: This is the phase where the `JavaScript Engine` assigns the values to the variables and executes the code.
+  - There are twio types:
+    - Global Execution Context: This is the execution context of the **entire code**.
+    - Local Execution Context: This is the execution context of a **function** or a **block**.
+
+- Example:
+
+```javascript
+var userName = "Tom";
+var userAge = 30;
+
+console.log(`userName: ${userName}`); // prints "userName: Tom"
+console.log(`userAge: ${userAge}`); // prints "userAge: 30"
+
+function greetUser (name) {
+  var greet = "I hope you are doing fine.";
+  console.log(`Hello ${name}, ${greet}`);
+
+  var currentYeatr = 2030;
+  const year = currentYeatr - userAge;
+  return `Your birth year is ${year}`
+}
+
+const birthYear = greetUser(userName);
+console.log(birthYear);
+```
+
+- Explanation:
+  - **Phase 1: Creation Phase**
+    - All the variables and functions are created but not assigned any value, so essentially they will be `undefined`.
+    - Only the **global execution context** is created, they are: `userName`, `userAge`, `greetUser`, and `birthYear`.
+  - **Phase 2: Execution Phase**
+    - The values are assigned to the variables.
+    - The `greetUser` function is executed.
+    - The `currentYeatr` variable is created and assigned the value `2030`.
+
+## Hoisting
+
+- Hoisting is a mechanism in `JavaScript` where the variables and functions are moved to the top of the current scope before the code is executed.
+
+- Example:
+
+```javascript
+
+console.log(`userName: ${userName}`); // prints "userName: Tom"
+console.log(`userAge: ${userAge}`); // prints "userAge: 30"
+
+greetUser(userName);
+
+var userName = "Tom";
+var userAge = 30;
+console.log(`userName: ${userName}`);
+console.log(`userAge: ${userAge}`);
+
+function greetUser (name) {
+  var greet = "I hope you are doing fine.";
+  console.log(`Hello ${name}, ${greet}`);
+
+  var currentYeatr = 2030;
+  const year = currentYeatr - userAge;
+  return `Your birth year is ${year}`
+}
+
+const birthYear = greetUser(userName);
+console.log(birthYear);
+```
+
+- Outptut:
+
+```console
+userName: undefined
+userAge: undefined
+hello undefined, I hope you are doing fine.
+userName: Tom
+userAge: 30
+hello Tom, I hope you are doing fine.
+Your birth year is 2000
+```
+
+- Explanation:
+  - here, the `userName` and the `userAge` is **undefined** in the first two lines becaue, the variable is created but not assigned any value.
+
+## Call Stack
+
+- The call stack is a list of functions that are currently executing.
