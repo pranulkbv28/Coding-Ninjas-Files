@@ -475,3 +475,11 @@ Your birth year is 2000
 ## Call Stack
 
 - The call stack is a list of functions that are currently executing.
+
+## scope
+
+### Types
+
+- Global
+- Function (Local)
+- Block
