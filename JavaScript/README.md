@@ -482,4 +482,4 @@ Your birth year is 2000
 
 - Global
 - Function (Local)
-- Block
+- Block -> [example](./Lecture%204/script.js) --- `check line 22`

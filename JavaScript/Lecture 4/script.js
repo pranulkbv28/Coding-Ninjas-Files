@@ -12,3 +12,11 @@ if (
 }
 
 console.log(success);
+
+{
+  let num = 10;
+  const name = "Pranaav";
+  var age = 20;
+}
+// console.log(num);
+console.log(age); // this is block scoped
