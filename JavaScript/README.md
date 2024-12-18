@@ -189,6 +189,123 @@ let result = functionName(param1, param2, param3);
 
 - here, the value is captured in a variable.
 
+#### Function Expression
+
+- these are `functions` without namesand are also called `anonymous functions`.
+- we can use this method to avoid `function hoisting`.
+
+```javascript
+let functionName = function (param1, param2, param3 = 0) {
+  return param1 + param2 + param3;
+}
+
+console.log(functionName); // prints the function itself
+// calling
+console.log(functionName(param1, param2, param3));
+```
+
+#### Arrow Functions
+
+- this is another way to declare a function.
+- it is a bit cleaner way to declare a function.
+
+```javascript
+const functionName = (param1, param2, param3 = 0) => {
+  // code to be executed
+}
+functionName(param1, param2, param3);
+```
+
+#### IIFE
+
+- IIFE is **Immediately Invoked Function Expression**.
+- IIFE is a way to create a function without using the `function` keyword.
+
+```javascript
+(function (param1, param2, param3 = 0) {
+  console.log(param1, param2, param3);
+})(param1, param2, param3);
+```
+
+- by using `IIFE`, we can perform **data abstraction**, [example](./Test/script.js) -> line number 124
+- `IIFE` are also used to encapsulate code and avoid global namespace pollution.
+
+#### Pure Functions
+
+- a pure function is a function that does not have any side effects.
+- it is a function that returns the same output for the same set of inputs.
+
+```javascript
+function calculation(a, b) {
+  return a*b;
+}
+
+console.log(calculation(2, 3));
+// this is a pure function because it returns the same output for the same set of inputs.
+
+const discount = 25;
+
+const calcDiscount = (price) => {
+  return price - (price * discount / 100);
+}
+
+console.log(calcDiscount(100));
+// here, the output is dependent on the input and also an external factor, so therefore it is an impure function.
+
+```
+
+- a function is called pure only if:
+  - it returns the same output for the same set of inputs.
+  - it does not modify any external state. For example, in the above example, `discount` is an external state. and if the function has a line saying `discount = 50` or anything else that changes its original state, then it is not pure.
+  - it does not have any side effects.
+
+#### Callback Functions
+
+- this is when we use a function as a parameter that is passed to another function.
+
+```javascript
+function greet(wish) {
+  console.log(`${wish()}, Pranaav`)
+}
+
+function sayHi() {
+  return "Hi";
+}
+
+greet(sayHi); // this is a callback function
+// Output: Hi, Pranaav
+```
+
+#### Higher Order Functions
+
+- it is a function that accepts a function as an argument or a function that returns a function.
+
+```javascript
+function square (num) {
+  return num * num;
+}
+
+function cube (num) {
+  return num * num * num;
+}
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const higherOrderFunc = (inputs, fn) => {
+  const output = [];
+  for (let ele of inputs) {
+    output.push(fn(ele));
+  }
+
+  return output;
+}
+
+console.log(higherOrderFunc(arr, square));
+// Output: [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+console.log(higherOrderFunc(arr, cube));
+// Output: [1, 8, 27, 64, 125, 216, 343, 512, 729, 1000]
+```
+
 ### Arrays
 
 - Arrays in `JavaScript` are **heterogenous**. This means, an array can store elements of different data types.
@@ -511,6 +628,7 @@ function print() {
 console.log(a, b, c);
 print();
 ```
+
 #### Result
 
 ```bash
@@ -550,4 +668,44 @@ inner10 twenty 30
 
 ## Closures
 
+- A closure is a combination of a function bundled together with the lexical environment in which it was created.
 
+- A **closure** in `JavaScript` is a feature where an inner function has access to its outer enclosing function's variables. This allows the inner function to remember and access these variables even after the outer function has finished executing.
+
+```javascript
+function outerFunction() {
+  let counter = 0;
+  return function innerFunction() {
+    counter++;
+    console.log(counter);
+  }
+}
+
+const increment = outerFunction();
+
+increment(); // 1
+increment(); // 2
+```
+
+- Also check [example](Test/script.js) -> line 88
+
+## Currying
+
+- It is a way of transforming a function that takes multiple arguments into a sequence of functions that each take a single argument.
+
+```javascript
+function add1(a, b, c) {
+  return a + b + c;
+}
+console.log(add(1, 2, 3)); // 6
+
+function add2(a) {
+  return function (b) {
+    return function (c) {
+      return a + b + c;
+    }
+  }
+}
+
+console.log(add2(1)(2)(3)); // 6
+```
