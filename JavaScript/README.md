@@ -483,3 +483,71 @@ Your birth year is 2000
 - Global
 - Function (Local)
 - Block -> [example](./Lecture%204/script.js) --- `check line 22`
+
+### Scope Chianing
+
+```javascript
+var a = 10;
+let b = 20;
+const c = 30;
+
+function print() {
+  var a = 'ten'
+  let b = 'twenty';
+
+
+  console.log('***Inside Function Print***');
+  console.log(a, b, c);
+  console.log('*******');
+
+  function innerPrint() {
+    var a = 'inner10';
+    console.log('***Inside Inner Function Print***');
+    console.log(a, b, c);
+  }
+
+  innerPrint();
+}
+console.log(a, b, c);
+print();
+```
+#### Result
+
+```bash
+10 20 30
+***Inside Function Print***
+ten twenty 30
+*******
+***Inside Inner Function Print***
+inner10 twenty 30
+```
+
+### Lexical Environment
+
+- In `JavaScript`, the `Lexical Environment` is essentially the scope of a `variable`. It governs how variables are accessed and managed during code execution. It's determined by the position of variables within the source code, specifically where they are defined.
+
+### Life Cycle of Variables
+
+#### Life Cycle of Variables in the TDZ: `let`, `const`, and `var`
+
+- In JavaScript, the life cycle of variables varies depending on their type and presence in the Temporal Dead Zone (TDZ is the period between the creation and declaration of a `let` or `const` variable).
+- A brief overview of how `let`, `const`, and `var` declarations go through different stages, including TDZ, initialization, and usability is described below:
+  1. `let` and `const`
+      - **Creation**: Variables are created during the creation phase but unlike var it is not initialized with “undefined” rather it remain uninitialized.
+      - **TDZ (Temporal Dead Zone)**: Variables enter the TDZ until they are formally declared.
+      - **TDZ Reference Error**: Accessing or assigning values during the TDZ results in a `ReferenceError`.
+      - **Declaration**: Variables are declared,initializing them with the assigned value.
+      - **Usable**: Once declared, variables can be accessed and assigned new values.
+  2. `var`
+      - **Hoisting**: `var` variables are hoisted during the creation phase to the top of their scope.
+      - **Initialization**: `var` variables are initialized with the value `undefined` during hoisting.
+      - **Usable**: `var` variables can be accessed and assigned values throughout their scope, even before their actual declaration in the code.
+
+## Strict Mode
+
+- Using `Strict Mode` in `JavaScript` does not allow JavaScript be in its original brittle, sloppy maner.
+- It also helps with managing small and simple errors which would otherwise take a long time to debug.
+
+## Closures
+
+
