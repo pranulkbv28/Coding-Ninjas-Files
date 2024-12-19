@@ -709,3 +709,9 @@ function add2(a) {
 
 console.log(add2(1)(2)(3)); // 6
 ```
+
+## This Keyword
+
+- The `this` keyword refers to the **object** that is currently executing the code.
+- It is a `pointer` to the **object** that is currently being executed.
+- If we were to `console.log(this)` in a webpage, it would print the **window** object.

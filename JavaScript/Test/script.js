@@ -298,9 +298,213 @@
 
 // console.log(filteredSongs);
 
-const arr = [1, 2, 4, 3, 5];
-const find1 = arr.find((num) => num > 2);
-const find2 = arr.findIndex((num) => num > 10);
-console.log(find1);
-console.log(find2);
-console.log(Boolean(undefined));
+// const arr = [1, 2, 4, 3, 5];
+// const find1 = arr.find((num) => num > 2);
+// const find2 = arr.findIndex((num) => num > 10);
+// console.log(find1);
+// console.log(find2);
+// console.log(Boolean(undefined));
+
+// const productList = [
+//   { id: "p1", name: "Apples", category: "Fruits", price: 2.5, inStock: true },
+//   {
+//     id: "p2",
+//     name: "Oranges",
+//     category: "Fruits",
+//     price: 1.99,
+//     inStock: false,
+//   },
+//   {
+//     id: "p3",
+//     name: "Blueberries",
+//     category: "Fruits",
+//     price: 4.99,
+//     inStock: true,
+//   },
+//   {
+//     id: "p4",
+//     name: "Carrots",
+//     category: "Vegetables",
+//     price: 1.0,
+//     inStock: true,
+//   },
+//   {
+//     id: "p5",
+//     name: "Tomatoes",
+//     category: "Vegetables",
+//     price: 1.5,
+//     inStock: true,
+//   },
+// ];
+
+// function searchAndBuyProduct(productList, productName) {
+//   // Step 1: Find the product object with the matching name using the find method
+//   // Step 2: Check if the product was found and if it's in stock
+
+//   const product = productList.find((prod) => prod.name === productName);
+//   console.log(this);
+
+//   if (product && product.inStock) {
+//     product.inStock = false;
+
+//     return true;
+//   } else if (product && !product.inStock) {
+//     return false;
+//   } else {
+//     return false;
+//   }
+// }
+
+// const result = searchAndBuyProduct(productList, "Oranges");
+// console.log(result);
+
+// const user = {
+//   name: "Pranaav",
+//   age: 21,
+//   address: {
+//     street: "123 Main St",
+//     city: "New York",
+//     state: "NY",
+//     zip: "10001",
+//   },
+//   hobbies: ["reading", "coding", "gaming"],
+//   fn: function () {
+//     console.log(this);
+//   },
+// };
+
+// user.fn();
+// console.log(user);
+
+// const orders = [
+//   {
+//     orderNumber: 1,
+//     items: [
+//       { name: "Cappuccino", price: 3.5 },
+//       { name: "Chocolate Croissant", price: 2.5 },
+//     ],
+//   },
+//   {
+//     orderNumber: 2,
+//     items: [
+//       { name: "Latte", price: 4.0 },
+//       { name: "Blueberry Muffin", price: 2.75 },
+//     ],
+//     discountCode: "COFFEELOVER",
+//   },
+// ];
+
+// const priceArr = orders.map((order) => {
+//   if (order.discountCode) {
+//     const preTotal = order.items.reduce((total, item) => total + item.price, 0);
+
+//     switch (order.discountCode) {
+//       case "COFFEELOVER":
+//         return Number((preTotal - preTotal * 0.1).toFixed(2));
+//       case "TEALOVER":
+//         return Number((preTotal - preTotal * 0.2).toFixed(2));
+//       default:
+//         return Number(preTotal.toFixed(2));
+//     }
+//   } else {
+//     const total = order.items.reduce((total, item) => total + item.price, 0);
+//     return total;
+//   }
+// });
+// console.log(priceArr);
+// const sumTotal = priceArr.reduce((total, price) => total + price, 0);
+// console.log(sumTotal);
+
+// Do not alter the starter code
+
+// const orders = [
+//   {
+//     orderNumber: 1,
+//     items: [
+//       { name: "Cappuccino", price: 3.5 },
+//       { name: "Chocolate Croissant", price: 2.5 },
+//     ],
+//   },
+//   {
+//     orderNumber: 2,
+//     items: [
+//       { name: "Latte", price: 4.0 },
+//       { name: "Blueberry Muffin", price: 2.75 },
+//     ],
+//     discountCode: "COFFEELOVER",
+//   },
+// ];
+
+// // Function to calculate the total value of all orders
+// // Apply discounts if applicable
+// function totalOrderValue(orders, applyDiscount) {
+//   // Map over each order to calculate its total value
+//   // Use the reduce method to sum the prices of all items in the order
+//   // Check if a discountCode is present and apply the discount using the provided callback function
+
+//   // Your implementation should:
+//   // 1. Calculate the total value for each order
+//   // 2. Apply the discount (if any) using the applyDiscount callback
+//   // 3. Sum up the totals for all orders
+//   // 4. Return the final grand total rounded to 2 decimal places
+
+//   const priceArr = orders.map((order) => {
+//     if (order.discountCode) {
+//       const preTotal = order.items.reduce(
+//         (total, item) => total + item.price,
+//         0
+//       );
+
+//       const sumTotal = applyDiscount(order.discountCode, preTotal);
+
+//       return sumTotal;
+//     } else {
+//       const total = order.items.reduce((total, item) => total + item.price, 0);
+//       return total;
+//     }
+//   });
+
+//   const sumTotal = priceArr.reduce((total, price) => total + price, 0);
+
+//   return sumTotal;
+// }
+
+// //Below is the callback function to calculate the discount
+// const applyDiscount = (discountCode, total) => {
+//   // Implement discount logic here
+//   switch (discountCode) {
+//     case "COFFEELOVER":
+//       return Number((total - total * 0.1).toFixed(2));
+//     case "TEALOVER":
+//       return Number((total - total * 0.2).toFixed(2));
+//     default:
+//       return Number(total.toFixed(2));
+//   }
+// };
+
+// const grandTotal = totalOrderValue(orders, applyDiscount);
+// console.log(grandTotal);
+
+// Complete the function calculateAverage
+const weather = [
+  { city: "New York", temperature: 50, pressure: 1015 },
+  { city: "Los Angeles", temperature: 70, pressure: 1010 },
+  { city: "Chicago", temperature: 40, pressure: 1012 },
+  { city: "Houston", temperature: 75, pressure: 1020 },
+  { city: "Miami", temperature: 80, pressure: 1017 },
+];
+const pressureThreshold = 1015;
+function calculateAverage(pressureThreshold) {
+  //Implement your function here
+  const filteredWeather = weather.filter(
+    (item) => item.pressure >= pressureThreshold
+  );
+  const totalTemp = filteredWeather.reduce(
+    (total, item) => total + item.temperature,
+    0
+  );
+  const avgTemp = totalTemp / filteredWeather.length;
+  return avgTemp.toFixed(1);
+}
+console.log(calculateAverage(pressureThreshold));
+//Output : 68.3
