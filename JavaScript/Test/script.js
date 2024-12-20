@@ -486,25 +486,134 @@
 // console.log(grandTotal);
 
 // Complete the function calculateAverage
-const weather = [
-  { city: "New York", temperature: 50, pressure: 1015 },
-  { city: "Los Angeles", temperature: 70, pressure: 1010 },
-  { city: "Chicago", temperature: 40, pressure: 1012 },
-  { city: "Houston", temperature: 75, pressure: 1020 },
-  { city: "Miami", temperature: 80, pressure: 1017 },
-];
-const pressureThreshold = 1015;
-function calculateAverage(pressureThreshold) {
-  //Implement your function here
-  const filteredWeather = weather.filter(
-    (item) => item.pressure >= pressureThreshold
-  );
-  const totalTemp = filteredWeather.reduce(
-    (total, item) => total + item.temperature,
-    0
-  );
-  const avgTemp = totalTemp / filteredWeather.length;
-  return avgTemp.toFixed(1);
+// const weather = [
+//   { city: "New York", temperature: 50, pressure: 1015 },
+//   { city: "Los Angeles", temperature: 70, pressure: 1010 },
+//   { city: "Chicago", temperature: 40, pressure: 1012 },
+//   { city: "Houston", temperature: 75, pressure: 1020 },
+//   { city: "Miami", temperature: 80, pressure: 1017 },
+// ];
+// const pressureThreshold = 1015;
+// function calculateAverage(pressureThreshold) {
+//   //Implement your function here
+//   const filteredWeather = weather.filter(
+//     (item) => item.pressure >= pressureThreshold
+//   );
+//   const totalTemp = filteredWeather.reduce(
+//     (total, item) => total + item.temperature,
+//     0
+//   );
+//   const avgTemp = totalTemp / filteredWeather.length;
+//   return avgTemp.toFixed(1);
+// }
+// console.log(calculateAverage(pressureThreshold));
+// //Output : 68.3
+
+// const movie = {
+//   title: "The Avengers",
+//   year: 2012,
+//   director: "Joss Whedon",
+//   cast: [
+//     "Robert Downey Jr.",
+//     "Chris Evans",
+//     "Chris Hemsworth",
+//     "Mark Ruffalo",
+//     "Scarlett Johansson",
+//     "Jeremy Renner",
+//     "Tom Hiddleston",
+//     "Samuel L. Jackson",
+//   ],
+//   plot: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+//   poster:
+//     "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+//   getDetails: function () {
+//     console.log(`Title: ${movie.title}`);
+//     console.log(`Year: ${this.year}`);
+//     console.log(`Director: ${this.director}`);
+//     console.log(`Actors: ${this.cast.join(", ")}`);
+//     console.log(`Plot: ${this.plot}`);
+//     console.log(`Poster: ${this.poster}`);
+//   },
+//   getMovieDetails: function (detail) {
+//     console.log(this[detail]);
+//   },
+// };
+
+// movie.getDetails();
+// movie.getMovieDetails("cast");
+
+// const userProfile = {
+//   name: "John Doe",
+//   email: "john.doe@example.com",
+//   address: {
+//     city: "New York",
+//     street: "123 Main St",
+//     zipCode: "10001",
+//   },
+// };
+// const userProfile2 = {
+//   name: "Marry Jane",
+//   email: "marry.jane@example.com",
+//   address: {
+//     city: "L.A",
+//     street: "154, washington road",
+//     block: "0101",
+//     zipCode: "10011",
+//   },
+// };
+
+// const keys = ["address", "city"];
+
+// console.log(userProfile[keys[0]][keys[1]]);
+
+const userProfile = {
+  name: "John Doe",
+  email: "john.doe@example.com",
+  address: {
+    city: "New York",
+    street: "123 Main St",
+    zipCode: "10001",
+  },
+};
+const userProfile2 = {
+  name: "Marry Jane",
+  email: "marry.jane@example.com",
+  address: {
+    city: "L.A",
+    street: "154, washington road",
+    block: "0101",
+    zipCode: "10011",
+  },
+};
+
+// console.log(userProfile.address.name);
+
+function getUserDetail(profile, keys) {
+  // Implement your function here
+  if (Array.isArray(keys)) {
+    if (keys.length >= 2) {
+      const result = profile[keys[0]][keys[1]];
+      if (!result) {
+        return "Not available";
+      } else {
+        return result;
+      }
+    } else if (keys.length === 1) {
+      const result = profile[keys[0]];
+      if (!result) {
+        return "Not available";
+      } else {
+        return result;
+      }
+    }
+  } else {
+    const result = profile[keys];
+    if (!result) {
+      return "Not available";
+    } else {
+      return result;
+    }
+  }
 }
-console.log(calculateAverage(pressureThreshold));
-//Output : 68.3
+
+console.log(getUserDetail(userProfile, "email"));

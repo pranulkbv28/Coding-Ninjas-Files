@@ -715,3 +715,11 @@ console.log(add2(1)(2)(3)); // 6
 - The `this` keyword refers to the **object** that is currently executing the code.
 - It is a `pointer` to the **object** that is currently being executed.
 - If we were to `console.log(this)` in a webpage, it would print the **window** object.
+
+## Object Oriented Programming (OOP) in JavaScript
+
+### Object Literal
+
+- The entire collection of properties and methods that are associated with a particular object is called an **object literal**.
+- Object literals are used to create objects in `JavaScript`.
+- [example](./Test/script.js) --> line 512
