@@ -723,3 +723,24 @@ console.log(add2(1)(2)(3)); // 6
 - The entire collection of properties and methods that are associated with a particular object is called an **object literal**.
 - Object literals are used to create objects in `JavaScript`.
 - [example](./Test/script.js) --> line 512
+
+### Constructor Function
+
+- A constructor function is a function that is used to create objects.
+- The naming convention for a constructor function is `PascalCase`.
+
+```javascript
+function ObjectName(param1, param2) {
+  this.param1 = param1;
+  this.param2 = param2;
+
+  this.print = function () {
+    console.log(`Param1: ${this.param1}, Param2: ${this.param2}`);
+  }
+}
+
+const obj = new ObjectName(1, 2);
+obj.print();
+```
+
+- PS: We can also encapsulate it in a class. [example](./Test/script.js) --> line 621

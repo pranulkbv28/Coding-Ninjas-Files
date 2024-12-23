@@ -534,7 +534,7 @@
 //     console.log(`Plot: ${this.plot}`);
 //     console.log(`Poster: ${this.poster}`);
 //   },
-//   getMovieDetails: function (detail) {
+//   getMovieDetails (detail) {
 //     console.log(this[detail]);
 //   },
 // };
@@ -566,54 +566,68 @@
 
 // console.log(userProfile[keys[0]][keys[1]]);
 
-const userProfile = {
-  name: "John Doe",
-  email: "john.doe@example.com",
-  address: {
-    city: "New York",
-    street: "123 Main St",
-    zipCode: "10001",
-  },
-};
-const userProfile2 = {
-  name: "Marry Jane",
-  email: "marry.jane@example.com",
-  address: {
-    city: "L.A",
-    street: "154, washington road",
-    block: "0101",
-    zipCode: "10011",
-  },
-};
+// const userProfile = {
+//   name: "John Doe",
+//   email: "john.doe@example.com",
+//   address: {
+//     city: "New York",
+//     street: "123 Main St",
+//     zipCode: "10001",
+//   },
+// };
+// const userProfile2 = {
+//   name: "Marry Jane",
+//   email: "marry.jane@example.com",
+//   address: {
+//     city: "L.A",
+//     street: "154, washington road",
+//     block: "0101",
+//     zipCode: "10011",
+//   },
+// };
 
-// console.log(userProfile.address.name);
+// // console.log(userProfile.address.name);
 
-function getUserDetail(profile, keys) {
-  // Implement your function here
-  if (Array.isArray(keys)) {
-    if (keys.length >= 2) {
-      const result = profile[keys[0]][keys[1]];
-      if (!result) {
-        return "Not available";
-      } else {
-        return result;
-      }
-    } else if (keys.length === 1) {
-      const result = profile[keys[0]];
-      if (!result) {
-        return "Not available";
-      } else {
-        return result;
-      }
-    }
-  } else {
-    const result = profile[keys];
-    if (!result) {
-      return "Not available";
-    } else {
-      return result;
-    }
+// function getUserDetail(profile, keys) {
+//   // Implement your function here
+//   if (Array.isArray(keys)) {
+//     if (keys.length >= 2) {
+//       const result = profile[keys[0]][keys[1]];
+//       if (!result) {
+//         return "Not available";
+//       } else {
+//         return result;
+//       }
+//     } else if (keys.length === 1) {
+//       const result = profile[keys[0]];
+//       if (!result) {
+//         return "Not available";
+//       } else {
+//         return result;
+//       }
+//     }
+//   } else {
+//     const result = profile[keys];
+//     if (!result) {
+//       return "Not available";
+//     } else {
+//       return result;
+//     }
+//   }
+// }
+
+// console.log(getUserDetail(userProfile, "email"));
+
+class ObjectName {
+  constructor(param1, param2) {
+    this.param1 = param1;
+    this.param2 = param2;
+
+    this.print = function () {
+      console.log(`Param1: ${this.param1}, Param2: ${this.param2}`);
+    };
   }
 }
 
-console.log(getUserDetail(userProfile, "email"));
+const obj = new ObjectName(1, 2);
+obj.print();
