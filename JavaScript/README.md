@@ -744,3 +744,11 @@ obj.print();
 ```
 
 - PS: We can also encapsulate it in a class. [example](./Test/script.js) --> line 621
+
+### Prototype
+
+- `JavaScript` is a prototype based language.
+- all objects in `javascript` has a **built-in** property called `prototype`.
+- `prototype` is itself an object.
+
+#### Proototype Chain

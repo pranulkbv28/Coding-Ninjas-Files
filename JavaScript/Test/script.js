@@ -618,16 +618,63 @@
 
 // console.log(getUserDetail(userProfile, "email"));
 
-class ObjectName {
-  constructor(param1, param2) {
-    this.param1 = param1;
-    this.param2 = param2;
+// class ObjectName {
+//   constructor(param1, param2) {
+//     this.param1 = param1;
+//     this.param2 = param2;
 
-    this.print = function () {
-      console.log(`Param1: ${this.param1}, Param2: ${this.param2}`);
-    };
-  }
-}
+//     this.print = function () {
+//       console.log(`Param1: ${this.param1}, Param2: ${this.param2}`);
+//     };
+//   }
+// }
 
-const obj = new ObjectName(1, 2);
-obj.print();
+// const obj = new ObjectName(1, 2);
+// obj.print();
+
+// function Movie(title) {
+//   this.title = title;
+// }
+
+// const movie1 = new Movie("The Avengers");
+// movie1.year = 2012;
+
+// console.log(movie1);
+
+// const movie2 = new Movie("Avatar");
+
+// console.log(movie2);
+// console.log(movie2.__proto__);
+// console.log(movie1.__proto__.__proto__.__proto__);
+
+const movie = {
+  title: "The Avengers",
+  year: 2012,
+  director: "Joss Whedon",
+  cast: [
+    "Robert Downey Jr.",
+    "Chris Evans",
+    "Chris Hemsworth",
+    "Mark Ruffalo",
+    "Scarlett Johansson",
+    "Jeremy Renner",
+    "Tom Hiddleston",
+    "Samuel L. Jackson",
+  ],
+  plot: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+  poster:
+    "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+  getDetails: function () {
+    console.log(`Title: ${movie.title}`);
+    console.log(`Year: ${this.year}`);
+    console.log(`Director: ${this.director}`);
+    console.log(`Actors: ${this.cast.join(", ")}`);
+    console.log(`Plot: ${this.plot}`);
+    console.log(`Poster: ${this.poster}`);
+  },
+  getMovieDetails(detail) {
+    console.log(this[detail]);
+  },
+};
+
+console.log(movie.__proto__);
