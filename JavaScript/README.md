@@ -599,7 +599,7 @@ Your birth year is 2000
 
 - Global
 - Function (Local)
-- Block -> [example](./Lecture%204/script.js) --- `check line 22`
+- Block -> [example](./Lecture%204/script.js#L22) <!-- line 22 -->
 
 ### Scope Chianing
 
@@ -687,7 +687,7 @@ increment(); // 1
 increment(); // 2
 ```
 
-- Also check [example](Test/script.js) -> line 88
+- Also check [example](Test/script.js#L88) <!-- line 88 -->
 
 ## Currying
 
@@ -722,7 +722,7 @@ console.log(add2(1)(2)(3)); // 6
 
 - The entire collection of properties and methods that are associated with a particular object is called an **object literal**.
 - Object literals are used to create objects in `JavaScript`.
-- [example](./Test/script.js) --> line 512
+- [example](./Test/script.js#L512) <!-- line 512 -->
 
 ### Constructor Function
 
@@ -743,7 +743,7 @@ const obj = new ObjectName(1, 2);
 obj.print();
 ```
 
-- PS: We can also encapsulate it in a class. [example](./Test/script.js) --> line 621
+- PS: We can also encapsulate it in a class. [example](./Test/script.js#L621) <!-- line 621 -->
 
 ### Prototype
 
@@ -751,4 +751,12 @@ obj.print();
 - all objects in `javascript` has a **built-in** property called `prototype`.
 - `prototype` is itself an object.
 
-#### Proototype Chain
+#### Proototype Chaining
+
+- **Prototype chaining** is a mechanism in `JavaScript` that allows objects to **inherit properties** and methods from their prototype chain.
+- [example](./Test/script.js#L682)
+
+### Array Prototype
+
+- `Array.prototype` is a **built-in** property of `Array` objects in `JavaScript`.
+- It provides a collection of methods that can be used to modify and manipulate arrays.

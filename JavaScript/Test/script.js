@@ -647,34 +647,72 @@
 // console.log(movie2.__proto__);
 // console.log(movie1.__proto__.__proto__.__proto__);
 
-const movie = {
-  title: "The Avengers",
-  year: 2012,
-  director: "Joss Whedon",
-  cast: [
-    "Robert Downey Jr.",
-    "Chris Evans",
-    "Chris Hemsworth",
-    "Mark Ruffalo",
-    "Scarlett Johansson",
-    "Jeremy Renner",
-    "Tom Hiddleston",
-    "Samuel L. Jackson",
-  ],
-  plot: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
-  poster:
-    "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
-  getDetails: function () {
-    console.log(`Title: ${movie.title}`);
-    console.log(`Year: ${this.year}`);
-    console.log(`Director: ${this.director}`);
-    console.log(`Actors: ${this.cast.join(", ")}`);
-    console.log(`Plot: ${this.plot}`);
-    console.log(`Poster: ${this.poster}`);
-  },
-  getMovieDetails(detail) {
-    console.log(this[detail]);
-  },
-};
+// const movie = {
+//   title: "The Avengers",
+//   year: 2012,
+//   director: "Joss Whedon",
+//   cast: [
+//     "Robert Downey Jr.",
+//     "Chris Evans",
+//     "Chris Hemsworth",
+//     "Mark Ruffalo",
+//     "Scarlett Johansson",
+//     "Jeremy Renner",
+//     "Tom Hiddleston",
+//     "Samuel L. Jackson",
+//   ],
+//   plot: "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.",
+//   poster:
+//     "https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+//   getDetails: function () {
+//     console.log(`Title: ${movie.title}`);
+//     console.log(`Year: ${this.year}`);
+//     console.log(`Director: ${this.director}`);
+//     console.log(`Actors: ${this.cast.join(", ")}`);
+//     console.log(`Plot: ${this.plot}`);
+//     console.log(`Poster: ${this.poster}`);
+//   },
+//   getMovieDetails(detail) {
+//     console.log(this[detail]);
+//   },
+// };
 
-console.log(movie.__proto__);
+// console.log(movie.__proto__);
+
+// function Movie(title) {
+//   this.title = title;
+//   // this.getDetails = function () {
+//   //   console.log(`Title: ${this.title}`);
+//   // };
+// }
+
+// Movie.prototype.getDetails = function () {
+//   console.log(`Title: ${this.title}`);
+// };
+
+// const movie1 = new Movie("The Avengers");
+// movie1.year = 2012;
+
+// console.log(movie1);
+// console.log(movie1.__proto__);
+
+// const movie2 = new Movie("Avatar");
+
+// console.log(movie2);
+// console.log(movie2.__proto__);
+// console.log(movie1.__proto__.__proto__.__proto__);
+
+// function Person(name) {
+//   this.name = name;
+// }
+
+// Person.prototype.age = 30;
+
+// const john = new Person("John");
+
+// john.__proto__.age = 40;
+// console.log(john.age);
+// console.log(Person.prototype.age);
+
+const inputs = [];
+console.log(inputs.__proto__);
