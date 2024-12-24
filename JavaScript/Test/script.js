@@ -714,5 +714,37 @@
 // console.log(john.age);
 // console.log(Person.prototype.age);
 
-const inputs = [];
-console.log(inputs.__proto__);
+// const inputs = [];
+// console.log(inputs.__proto__);
+
+// const car = {
+//   name: "car",
+//   color: "black",
+//   getDetails: function (brand, seats) {
+//     console.log(
+//       `This is a ${this.color} ${this.name} of ${brand} company. It has ${seats} seats.`
+//     );
+//   },
+// };
+
+// car.getDetails("Audi", 5);
+
+// const bus = {
+//   name: "bus",
+//   color: "blue",
+// };
+
+// car.getDetails.call(bus, "Volvo", 30);
+
+// car.getDetails.apply(bus, ["Tata", 25]);
+
+// const veh1 = car.getDetails.bind(bus);
+// veh1("Mahindra", 20);
+
+function introduce(city, country) {
+  console.log(this.name + " is from " + city + ", " + country);
+}
+
+let person = { name: "Alice" };
+
+introduce.bind(person, "New York", "USA");

@@ -756,7 +756,18 @@ obj.print();
 - **Prototype chaining** is a mechanism in `JavaScript` that allows objects to **inherit properties** and methods from their prototype chain.
 - [example](./Test/script.js#L682)
 
-### Array Prototype
+#### Array Prototype
 
 - `Array.prototype` is a **built-in** property of `Array` objects in `JavaScript`.
 - It provides a collection of methods that can be used to modify and manipulate arrays.
+
+#### Call/Apply/Bind Methods
+
+- `call`, `apply`, and `bind` methods are used to invoke a function with a specific `this` value and arguments.
+- [Call Example](./Test//script.js#L732) <!-- line 732 -->
+  - **Call** is used to invoke a function of another object to your desired function.
+- [Apply Example](./Test//script.js#L739) <!-- line 739 -->
+  - **Apply** is used to invoke a function of another object to your desired function.
+- [Bind Example](./Test//script.js#L72) <!-- line 72 -->
+  - **Bind** is used to invoke a function of another object to your desired function.
+  - It can be used like a reuseable function.
