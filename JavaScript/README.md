@@ -768,6 +768,6 @@ obj.print();
   - **Call** is used to invoke a function of another object to your desired function.
 - [Apply Example](./Test//script.js#L739) <!-- line 739 -->
   - **Apply** is used to invoke a function of another object to your desired function.
-- [Bind Example](./Test//script.js#L72) <!-- line 72 -->
+- [Bind Example](./Test//script.js#L741) <!-- line 741 -->
   - **Bind** is used to invoke a function of another object to your desired function.
   - It can be used like a reuseable function.

@@ -741,10 +741,37 @@
 // const veh1 = car.getDetails.bind(bus);
 // veh1("Mahindra", 20);
 
-function introduce(city, country) {
-  console.log(this.name + " is from " + city + ", " + country);
+// function introduce(city, country) {
+//   console.log(this.name + " is from " + city + ", " + country);
+// }
+
+// let person = { name: "Alice" };
+
+// introduce.bind(person, "New York", "USA");
+
+function User(displayName) {
+  this.displayName = displayName;
 }
 
-let person = { name: "Alice" };
+const systemCredentials = {
+  username: "system",
+  password: "pass123",
+};
 
-introduce.bind(person, "New York", "USA");
+User.prototype.login = function (username, password) {
+  if (
+    username === systemCredentials.username &&
+    password === systemCredentials.password
+  ) {
+    console.log("Login Successful");
+  } else {
+    console.log("Login Failed");
+  }
+};
+
+const user = new User("Pranaav");
+
+const loginFunction = user.login.bind(systemCredentials);
+
+loginFunction("system", "pass123");
+loginFunction("system", "pass1234");
