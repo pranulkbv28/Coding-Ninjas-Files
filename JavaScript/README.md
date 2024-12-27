@@ -399,6 +399,28 @@ teams.filter((team) => console.log(team)); // prints the elements of the array
 teams.reduce((team) => console.log(team)); // prints the elements of the array
 ```
 
+#### Destructoring in an Array
+
+- This is a method of extracting singular values from an array.
+
+```javascript
+const fruits = ["Apple", "Banana", "Pineapple", "Berry", "Orange"];
+
+// Destructoring
+
+// Binding Method
+const [a, b] = fruits; // if we log a or b, we will get the 1st or the 2nd element respectively
+
+// Non-consecutive Destructoring
+const [c, , d] = fruits; // if we log c, we will get "Apple" and if we log d, we will get "Pineapple"
+
+// Chained Destructoring
+const [e, f, ...remainingFruits] = fruits; // if you log e -> "Apple", f -> "Banana", remainingFruits -> ["Pineapple", "Berry", "Orange"]
+
+// Nested Destructoring
+const [g, h, [i, j, k]] = fruits; if you log g -> "Apple", h -> "Banana", i -> "Pineapple", j -> "Berry", k -> "Orange"
+```
+
 ### Rest Operator and Spread Operator
 
 - `...` operator is used to spread an array into individual elements as well as to spread an object into individual properties.
