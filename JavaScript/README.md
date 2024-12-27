@@ -501,6 +501,32 @@ console.log(myObj.name); // prints Alexa
 console.log(myObj["age"]); // prints 10
 ```
 
+#### Destructoring in Objects
+
+- Destructuring in JavaScript is a concise way to extract values from objects (or arrays) and assign them to variables. It allows you to "unpack" properties of an object into individual variables using a simple syntax.
+
+```javascript
+const obj = {
+  a: 1,
+  b: 2,
+  c: 3,
+  d: 4
+};
+
+// Normal way of getting value from object
+const valOfA = obj.a;
+
+// Destructored method
+const { a } = obj;
+
+// Binding method
+const { b : b1 } = obj;
+
+// Assigning Method
+let c;
+(const {c : c} = obj);
+```
+
 ## Execution Context
 
 ### Phases
