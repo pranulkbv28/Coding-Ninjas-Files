@@ -418,7 +418,7 @@ const [c, , d] = fruits; // if we log c, we will get "Apple" and if we log d, we
 const [e, f, ...remainingFruits] = fruits; // if you log e -> "Apple", f -> "Banana", remainingFruits -> ["Pineapple", "Berry", "Orange"]
 
 // Nested Destructoring
-const [g, h, [i, j, k]] = fruits; if you log g -> "Apple", h -> "Banana", i -> "Pineapple", j -> "Berry", k -> "Orange"
+const [g, h, [i, j, k]] = fruits; // if you log g -> "Apple", h -> "Banana", i -> "Pineapple", j -> "Berry", k -> "Orange"
 ```
 
 ### Rest Operator and Spread Operator
