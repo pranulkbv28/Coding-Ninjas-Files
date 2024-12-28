@@ -749,29 +749,71 @@
 
 // introduce.bind(person, "New York", "USA");
 
-function User(displayName) {
-  this.displayName = displayName;
-}
+// function User(displayName) {
+//   this.displayName = displayName;
+// }
 
-const systemCredentials = {
-  username: "system",
-  password: "pass123",
-};
+// const systemCredentials = {
+//   username: "system",
+//   password: "pass123",
+// };
 
-User.prototype.login = function (username, password) {
-  if (
-    username === systemCredentials.username &&
-    password === systemCredentials.password
-  ) {
-    console.log("Login Successful");
-  } else {
-    console.log("Login Failed");
-  }
-};
+// User.prototype.login = function (username, password) {
+//   if (
+//     username === systemCredentials.username &&
+//     password === systemCredentials.password
+//   ) {
+//     console.log("Login Successful");
+//   } else {
+//     console.log("Login Failed");
+//   }
+// };
 
-const user = new User("Pranaav");
+// const user = new User("Pranaav");
 
-const loginFunction = user.login.bind(systemCredentials);
+// const loginFunction = user.login.bind(systemCredentials);
 
-loginFunction("system", "pass123");
-loginFunction("system", "pass1234");
+// loginFunction("system", "pass123");
+// loginFunction("system", "pass1234");
+
+// function Shipment(id, location, destination, status, resources) {
+//   this.id = id;
+//   this.location = location;
+//   this.destination = destination;
+//   this.status = status;
+//   this.resources = resources;
+// }
+
+// Shipment.prototype.updateStatusAndResources = function (status, resources) {
+//   this.status = status;
+//   this.resources = resources;
+// };
+
+// Shipment.prototype.assignResources = function (...resources) {
+//   resources.forEach((resource) => this.resources.push(resource));
+// };
+
+// const TrackingSystem = {
+//   shipments: [],
+//   updateStatus: function (id, status) {
+//     const shipment = this.shipments.find((shipment) => shipment.id === id);
+//     if (shipment) {
+//       shipment.status = status;
+//     } else {
+//       console.log("Shipment not found");
+//     }
+//   },
+//   viewShipment: function (id) {
+//     const shipment = this.shipments.find((shipment) => shipment.id === id);
+//     if (shipment) {
+//       const { id, status, resources, location, destination } = shipment;
+//       console.log(`Shipment ID: ${id}`);
+//       console.log(`Status: ${status}`);
+//       console.log(`Resources: ${resources.join(", ")}`);
+//       console.log(`Location: ${location}`);
+//       console.log(`Destination: ${destination}`);
+//     } else {
+//       console.log("Shipment not found");
+//     }
+//   },
+// };
