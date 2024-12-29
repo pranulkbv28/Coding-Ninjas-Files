@@ -758,6 +758,12 @@ function add2(a) {
 console.log(add2(1)(2)(3)); // 6
 ```
 
+## New Keyword
+
+- Creation of an object.
+- Binds `this` to the object.
+- Returns the object.
+
 ## This Keyword
 
 - The `this` keyword refers to the **object** that is currently executing the code.
@@ -765,6 +771,14 @@ console.log(add2(1)(2)(3)); // 6
 - If we were to `console.log(this)` in a webpage, it would print the **window** object.
 
 ## Object Oriented Programming (OOP) in JavaScript
+
+### Characteristics of OOPs
+
+- **Encapsulation**: Encapsulation is the bundling of data and methods that operate on that data into a single unit.
+- **Abstraction**: Abstraction is the concept of hiding the complex implementation details and showing only the necessary features of an object.
+- **Inheritance**: Inheritance is the mechanism by which one class acquires the properties and behavior of another class.
+- **Polymorphism**: Polymorphism is the ability of an object to take on many forms.
+- **Class**: A class is a blueprint for creating objects (a particular data structure), providing initial values for state (member variables or attributes), and implementations of behavior (member functions or methods).
 
 ### Object Literal
 
@@ -819,3 +833,156 @@ obj.print();
 - [Bind Example](./Test//script.js#L741) <!-- line 741 -->
   - **Bind** is used to invoke a function of another object to your desired function.
   - It can be used like a reuseable function.
+
+### Classes
+
+- `Classes` in `JavaScript` are just a syntactic sugar over the existing prototype-based inheritance.
+
+#### Differences between Contructor functions and Classes
+
+1. **Syntax**:
+   - **Constructor Functions**: Defined using the `function` keyword.
+
+     ```javascript
+     function Person(name, age) {
+       this.name = name;
+       this.age = age;
+     }
+     ```
+
+   - **Classes**: Defined using the `class` keyword.
+
+     ```javascript
+     class Person {
+       constructor(name, age) {
+         this.name = name;
+         this.age = age;
+       }
+     }
+     ```
+
+2. **Prototype Methods**:
+   - **Constructor Functions**: Methods are added to the prototype.
+
+     ```javascript
+     Person.prototype.greet = function() {
+       console.log(`Hello, my name is ${this.name}`);
+     };
+     ```
+
+   - **Classes**: Methods are defined directly within the class body.
+
+     ```javascript
+     class Person {
+       constructor(name, age) {
+         this.name = name;
+         this.age = age;
+       }
+       
+       greet() {
+         console.log(`Hello, my name is ${this.name}`);
+       }
+     }
+     ```
+
+3. **Instantiation**:
+   - **Constructor Functions**: Objects are created using the `new` keyword.
+
+     ```javascript
+     const person1 = new Person('Alice', 30);
+     ```
+
+   - **Classes**: Objects are created using the `new` keyword, similar to constructor functions.
+
+     ```javascript
+     const person1 = new Person('Alice', 30);
+     ```
+
+4. :
+**Inheritance**   - **Constructor Functions**: Inheritance is achieved using `Object.create` and manually setting the prototype.
+
+     ```javascript
+     function Employee(name, age, jobTitle) {
+       Person.call(this, name, age);
+       this.jobTitle = jobTitle;
+     }
+     Employee.prototype = Object.create(Person.prototype);
+     Employee.prototype.constructor = Employee;
+     ```
+
+   - **Classes**: Inheritance is achieved using the `extends` keyword and `super` function.
+
+     ```javascript
+     class Employee extends Person {
+       constructor(name, age, jobTitle) {
+         super(name, age);
+         this.jobTitle = jobTitle;
+       }
+       
+       work() {
+         console.log(`${this.name} is working as a ${this.jobTitle}`);
+       }
+     }
+     ```
+
+5. **Static Methods**:
+   - **Constructor Functions**: Static methods are added directly to the constructor function.
+
+     ```javascript
+     Person.createAnonymous = function() {
+       return new Person('Anonymous', 0);
+     };
+     ```
+
+   - **Classes**: Static methods are defined using the `static` keyword.
+
+     ```javascript
+     class Person {
+       static createAnonymous() {
+         return new Person('Anonymous', 0);
+       }
+     }
+     ```
+
+6. **Readability and Modern Syntax**:
+   - **Constructor Functions**: Older syntax, less readable for complex inheritance.
+   - **Classes**: Modern syntax, more readable and easier to use for inheritance and method definitions.
+
+#### Types of creating Classes in JavaScript
+
+- **Class Declaration**
+
+```javascript
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+```
+
+- **Class Expression**
+
+```javascript
+const Person = class {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  }
+}
+```
+
+#### Encapsulation
+
+- **Encapsulation** can be achieved in `JavaScript` using **private variables** or **private functions**.
+- **Private variables or functions** are variables or functions that are only accessible within the class.
+- [Example of a Private Variable](./Test/script.js#L944) <!-- line 944 -->
+- [Example of a Private Function](./Test/script.js#L954) <!-- line 954 -->

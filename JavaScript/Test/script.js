@@ -817,3 +817,161 @@
 //     }
 //   },
 // };
+
+// function Vehicle(name, color, wheels) {
+//   this.name = name;
+//   this.color = color;
+//   this.wheels = wheels;
+
+//   //   this.getDetails = function () {
+//   //     console.log(`The ${this.color} ${this.name} has ${this.wheels} wheels.`);
+//   //   };
+// }
+
+// Vehicle.prototype.getDetails = function () {
+//   console.log(`The ${this.color} ${this.name} has ${this.wheels} wheels.`);
+// };
+
+// class VehicleCl {
+//   /** Structure of a class
+//    * Properties
+//    * Constructor to initialize the vehicle object
+//    * methods
+//    */
+
+//   // properties
+//   name;
+//   color;
+//   wheels;
+
+//   // constructor
+//   constructor(name, color, wheels) {
+//     this.name = name;
+//     this.color = color;
+//     this.wheels = wheels;
+//   }
+
+//   // methods
+//   getDetails() {
+//     console.log(`The ${this.color} ${this.name} has ${this.wheels} wheels.`);
+//   }
+// }
+
+// const car = new VehicleCl("Car", "Black", 4);
+// car.getDetails();
+// console.log(car.hasOwnProperty("name")); // true
+// console.log(car.hasOwnProperty("getDetails")); // false
+
+// class Person {
+//   name;
+//   age;
+//   gender;
+
+//   constructor(name, age, gender) {
+//     this.name = name;
+//     this.age = age;
+//     this.gender = gender;
+//   }
+
+//   speak() {
+//     console.log(
+//       `Hello, my name is ${this.name} and I am ${this.age} years old.`
+//     );
+//   }
+// }
+
+// const Student = class {
+//   person;
+//   major;
+//   gpa;
+
+//   constructor(person, major, gpa) {
+//     this.person = person;
+//     this.major = major;
+//     this.gpa = gpa;
+//   }
+
+//   study() {
+//     console.log(`I am studying ${this.major} and my GPA is ${this.gpa}.`);
+//   }
+
+//   speak() {
+//     console.log(
+//       `Hello, my name is ${this.person.name} and I am ${this.person.age} years old. I am also a student studying ${this.major}.`
+//     );
+//   }
+// };
+
+// const person1 = new Person("John", 20, "M");
+// person1.speak();
+// const stud1 = new Student(person1, "CS", 9);
+
+// stud1.speak();
+
+// stud1.study();
+
+// class Car {
+//   constructor(make, model, year, color, mileage) {
+//     this.make = make;
+//     this.model = model;
+//     this.year = year;
+//     this.color = color;
+//     this.mileage = mileage;
+//     this.getMake = function () {
+//       return this.make;
+//     };
+//   }
+// }
+
+// Car.prototype.getModel = function () {
+//   return this.model;
+// };
+
+// Car.prototype.getYear = function () {
+//   return this.year;
+// };
+
+// Car.prototype.getColor = function () {
+//   return this.color;
+// };
+
+// Car.prototype.getMileage = function () {
+//   return this.mileage;
+// };
+
+// class ExpenseTracker {
+//   //Create your private properites here
+//   #expenses;
+//   #income;
+
+//   //Create a constructor function
+//   constructor(income) {
+//     this.#expenses = [];
+//     this.#income = income;
+//   }
+
+//   //create your private properties to calculate expenses
+//   #calculateTotalExpenses() {
+//     const totalAmount = this.#expenses.reduce(
+//       (total, expense) => total + expense.amount,
+//       0
+//     );
+//     return totalAmount;
+//   }
+
+//   //Create your public properties here
+//   addExpense(name, amount, date) {
+//     const expense = { name, amount, date };
+//     this.#expenses.push(expense);
+//   }
+
+//   calculateBalance() {
+//     const balance = this.#income - this.#calculateTotalExpenses();
+//     return balance;
+//   }
+// }
+
+// const tracker = new ExpenseTracker(5000);
+// tracker.addExpense("Rent", 1000, "2021-10-01");
+// tracker.addExpense("Groceries", 500, "2021-10-02");
+// console.log(tracker.calculateBalance()); // should output 3500
