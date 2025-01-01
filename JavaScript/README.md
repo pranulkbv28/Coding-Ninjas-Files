@@ -991,3 +991,5 @@ const Person = class {
 
 - **Inheritance** is a mechanism in which a new class inherits properties and methods from an existing class.
 - In `JavaScript`, inheritance can be achieved using the `extends` keyword.
+
+##### Inheritance in Constructor Functions
