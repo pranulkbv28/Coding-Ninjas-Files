@@ -975,3 +975,72 @@
 // tracker.addExpense("Rent", 1000, "2021-10-01");
 // tracker.addExpense("Groceries", 500, "2021-10-02");
 // console.log(tracker.calculateBalance()); // should output 3500
+
+// class Vehicle {
+//   // constructor
+//   constructor(name, color, wheels, number) {
+//     this.name = name;
+//     this.color = color;
+//     this.wheels = wheels;
+//   }
+
+//   // methods
+//   getDetails() {
+//     console.log(
+//       `The ${this.name} is ${this.color}. It has ${this.wheels} wheels.`
+//     );
+//   }
+// }
+
+// class Car extends Vehicle {
+//   // constructor
+//   constructor(color, brand, purpose) {
+//     super("Car", color, 4);
+//     this.brand = brand;
+//     this.purpose = purpose;
+//   }
+
+//   // methods
+//   //   getDetails() {
+//   //     console.log(
+//   //       `The ${this.name} is ${this.color}. It has ${this.wheels} wheels.`
+//   //     );
+//   //   } // we don't need this method as it is already present in the parent class
+
+//   // another feature is method overriding
+//   getDetails() {
+//     console.log(
+//       `The ${this.color} ${this.brand} ${this.name} is used for ${this.purpose}.`
+//     );
+//   } // this method will override the getDetails method in the parent class
+// }
+
+// const car1 = new Car("Black", "Audi", "Luxury Travelling");
+// car1.getDetails();
+// console.log(car1.__proto__);
+// console.log(car1);
+
+class Vehicle {
+  wheels = 4;
+  constructor(brand) {
+    this.brand = brand;
+  }
+
+  startEngine() {
+    console.log("Engine Started");
+  }
+}
+
+class Car extends Vehicle {
+  constructor(brand, model) {
+    super(brand);
+    this.model = model;
+  }
+  getWheels() {
+    return this.wheels;
+  }
+}
+
+const car1 = new Car("Audi", "A6");
+const wheelNum = car1.getWheels();
+console.log(wheelNum);
