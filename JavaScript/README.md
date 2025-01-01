@@ -986,3 +986,8 @@ const Person = class {
 - **Private variables or functions** are variables or functions that are only accessible within the class.
 - [Example of a Private Variable](./Test/script.js#L944) <!-- line 944 -->
 - [Example of a Private Function](./Test/script.js#L954) <!-- line 954 -->
+
+#### Inheritance
+
+- **Inheritance** is a mechanism in which a new class inherits properties and methods from an existing class.
+- In `JavaScript`, inheritance can be achieved using the `extends` keyword.
