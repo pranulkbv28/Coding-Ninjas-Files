@@ -1,0 +1,112 @@
+[
+  {
+    "firstName": "John",
+    "lastName": "Doe",
+    "age": 30,
+    "address": {
+      "streetAddress": "123 Main St",
+      "city": "Anytown",
+      "postalCode": "12345"
+    },
+    "phoneNumbers": ["123-456-7890", "987-654-3210"]
+  },
+  {
+    "firstName": "Jane",
+    "lastName": "Smith",
+    "age": 25,
+    "address": {
+      "streetAddress": "456 Elm St",
+      "city": "Othertown",
+      "postalCode": "67890"
+    },
+    "phoneNumbers": ["555-123-4567", "555-987-6543"]
+  },
+  {
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "age": 28,
+    "address": {
+      "streetAddress": "789 Oak St",
+      "city": "Sometown",
+      "postalCode": "11223"
+    },
+    "phoneNumbers": ["444-555-6666", "444-555-7777"]
+  },
+  {
+    "firstName": "Bob",
+    "lastName": "Brown",
+    "age": 35,
+    "address": {
+      "streetAddress": "101 Pine St",
+      "city": "Anycity",
+      "postalCode": "33445"
+    },
+    "phoneNumbers": ["333-444-5555", "333-444-6666"]
+  },
+  {
+    "firstName": "Charlie",
+    "lastName": "Davis",
+    "age": 40,
+    "address": {
+      "streetAddress": "202 Maple St",
+      "city": "Everytown",
+      "postalCode": "55667"
+    },
+    "phoneNumbers": ["222-333-4444", "222-333-5555"]
+  },
+  {
+    "firstName": "Diana",
+    "lastName": "Evans",
+    "age": 32,
+    "address": {
+      "streetAddress": "303 Birch St",
+      "city": "Somecity",
+      "postalCode": "77889"
+    },
+    "phoneNumbers": ["111-222-3333", "111-222-4444"]
+  },
+  {
+    "firstName": "Edward",
+    "lastName": "Franklin",
+    "age": 29,
+    "address": {
+      "streetAddress": "404 Cedar St",
+      "city": "Anyville",
+      "postalCode": "99001"
+    },
+    "phoneNumbers": ["999-888-7777", "999-888-6666"]
+  },
+  {
+    "firstName": "Fiona",
+    "lastName": "Garcia",
+    "age": 27,
+    "address": {
+      "streetAddress": "505 Walnut St",
+      "city": "Otherville",
+      "postalCode": "22334"
+    },
+    "phoneNumbers": ["888-777-6666", "888-777-5555"]
+  },
+  {
+    "firstName": "George",
+    "lastName": "Harris",
+    "age": 33,
+    "address": {
+      "streetAddress": "606 Chestnut St",
+      "city": "Sometown",
+      "postalCode": "44556"
+    },
+    "phoneNumbers": ["777-666-5555", "777-666-4444"]
+  },
+  {
+    "firstName": "Hannah",
+    "lastName": "Ivy",
+    "age": 26,
+    "address": {
+      "streetAddress": "707 Spruce St",
+      "city": "Everyville",
+      "postalCode": "66778"
+    },
+    "phoneNumbers": ["666-555-4444", "666-555-3333"]
+  }
+]

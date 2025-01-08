@@ -1045,192 +1045,487 @@
 // const wheelNum = car1.getWheels();
 // console.log(wheelNum);
 
-class Media {
-  // constructor
-  constructor(title, artist, duration) {
-    this.title = title;
-    this.artist = artist;
-    this.duration = duration;
+// class Media {
+//   // constructor
+//   constructor(title, artist, duration) {
+//     this.title = title;
+//     this.artist = artist;
+//     this.duration = duration;
+//   }
+
+//   // methods
+//   getTitle() {
+//     return this.title;
+//   }
+//   getArtist() {
+//     return this.artist;
+//   }
+//   getDuration() {
+//     return this.duration;
+//   }
+// }
+
+// class Song extends Media {
+//   // constructor
+//   constructor(title, artist, duration, album, genre) {
+//     super(title, artist, duration);
+//     this.album = album;
+//     this.genre = genre;
+//   }
+
+//   // methods
+//   getAlbum() {
+//     return this.album;
+//   }
+//   getGenre() {
+//     return this.genre;
+//   }
+// }
+
+// class PopSong extends Song {
+//   // constructor
+//   constructor(title, artist, duration, album, genre, danceability, energy) {
+//     super(title, artist, duration, album, genre);
+//     this.danceability = danceability;
+//     this.energy = energy;
+//   }
+
+//   // methods
+//   getDanceability() {
+//     return this.danceability;
+//   }
+//   getEnergy() {
+//     return this.energy;
+//   }
+// }
+
+// class RockSong extends Song {
+//   // constructor
+//   constructor(title, artist, duration, album, genre, distortion, tempo) {
+//     super(title, artist, duration, album, genre);
+//     this.distortion = distortion;
+//     this.tempo = tempo;
+//   }
+
+//   // methods
+//   getDistortion() {
+//     return this.distortion;
+//   }
+//   getTempo() {
+//     return this.tempo;
+//   }
+// }
+
+// class Podcast extends Media {
+//   // constructor
+//   constructor(title, artist, duration, host, topic) {
+//     super(title, artist, duration);
+//     this.host = host;
+//     this.topic = topic;
+//   }
+
+//   // methods
+//   getHost() {
+//     return this.host;
+//   }
+//   getTopic() {
+//     return this.topic;
+//   }
+// }
+
+// class NewsPodcast extends Podcast {
+//   // constructor
+//   constructor(title, artist, duration, host, topic, source) {
+//     super(title, artist, duration, host, topic);
+//     this.source = source;
+//   }
+
+//   // methods
+//   getSource() {
+//     return this.source;
+//   }
+//   getDuration() {
+//     return this.duration;
+//   }
+// }
+
+// class ComedyPodcast extends Podcast {
+//   // constructor
+//   constructor(title, artist, duration, host, topic, comedian, rating) {
+//     super(title, artist, duration, host, topic);
+//     this.comedian = comedian;
+//     this.rating = rating;
+//   }
+
+//   // methods
+//   getComedian() {
+//     return this.comedian;
+//   }
+//   getRating() {
+//     return this.rating;
+//   }
+// }
+
+// const popSong = new PopSong(
+//   "Shape of You",
+//   "Ed Sheeran",
+//   235,
+//   "÷",
+//   "Pop",
+//   0.825,
+//   0.652
+// );
+// console.log(popSong.getTitle()); // should output 'Shape of You'
+// console.log(popSong.getArtist()); // should output 'Ed Sheeran'
+// console.log(popSong.getDuration()); // should output 235
+
+// console.log(popSong.getAlbum()); // should output '÷'
+// console.log(popSong.getGenre()); // should output 'Pop'
+// console.log(popSong.getDanceability()); // should output 0.825
+// console.log(popSong.getEnergy()); // should output 0.652
+
+// const rockSong = new RockSong(
+//   "Stairway to Heaven",
+//   "Led Zeppelin",
+//   482,
+//   "Led Zeppelin IV",
+//   "Rock",
+//   0.056,
+//   63.5
+// );
+// console.log(rockSong.getTitle()); // should output 'Stairway to Heaven'
+// console.log(rockSong.getArtist()); // should output 'Led Zeppelin'
+// console.log(rockSong.getDuration()); // should output 482
+// console.log(rockSong.getAlbum()); // should output 'Led Zeppelin IV'
+// console.log(rockSong.getGenre()); // should output 'Rock'
+// console.log(rockSong.getDistortion()); // should output 0.056
+// console.log(rockSong.getTempo()); // should output 63.5
+
+// const newsPodcast = new NewsPodcast(
+//   "The Daily",
+//   "The New York Times",
+//   30,
+//   "Michael Barbaro",
+//   "News",
+//   "The New York Times"
+// );
+// console.log(newsPodcast.getTitle()); // should
+// // output 'The Daily'
+// console.log(newsPodcast.getArtist()); // should output 'The New York Times'
+// console.log(newsPodcast.getDuration()); // should output 30
+// console.log(newsPodcast.getHost()); // should output 'Michael Barbaro'
+// console.log(newsPodcast.getTopic()); // should output 'News'
+// console.log(newsPodcast.getSource()); // should output 'The New York Times'
+
+// const comedyPodcast = new ComedyPodcast(
+//   "My Favorite Murder",
+//   "Karen Kilgariff and Georgia Hardstark",
+//   60,
+//   "Karen Kilgariff and Georgia Hardstark",
+//   "Comedy",
+//   "Karen Kilgariff and Georgia Hardstark",
+//   4.8
+// );
+// console.log(comedyPodcast.getTitle()); // should output 'My Favorite Murder'
+// console.log(comedyPodcast.getArtist()); // should output 'Karen Kilgariff and Georgia Hardstark'
+// console.log(comedyPodcast.getDuration()); // should output 60
+// console.log(comedyPodcast.getHost()); // should output 'Karen Kilgariff and Georgia Hardstark'
+// console.log(comedyPodcast.getTopic()); // should output 'Comedy'
+// console.log(comedyPodcast.getComedian()); // should output 'Karen Kilgariff and Georgia Hardstark'
+
+// console.log(comedyPodcast.getRating()); // should output 4.8
+
+// Create Character constructor function
+// function Character(health, strength, agility) {
+//   this.health = health;
+//   this.strength = strength;
+//   this.agility = agility;
+// }
+
+// // Create Warrior constructor function inheriting Character
+// function Warrior(health, strength, agility, weaponType) {
+//   Character.call(this, health, strength, agility);
+//   this.weaponType = weaponType;
+// }
+// Warrior.prototype = Object.create(Character.prototype);
+// Warrior.prototype.constructor = Warrior;
+
+// // Create Mage constructor function inheriting Character
+// function Mage(health, strength, agility, spellType) {
+//   Character.call(this, health, strength, agility);
+//   this.spellType = spellType;
+// }
+// Mage.prototype = Object.create(Character.prototype);
+// Mage.prototype.constructor = Mage;
+
+// // Create Archer constructor function inheriting Character
+// function Archer(health, strength, agility, arrowType) {
+//   Character.call(this, health, strength, agility);
+//   this.arrowType = arrowType;
+// }
+// Archer.prototype = Object.create(Character.prototype);
+// Archer.prototype.constructor = Archer;
+
+// // Create Hero constructor function inheriting from both Warrior and Mage
+// function Hero(
+//   health,
+//   strength,
+//   agility,
+//   weaponType,
+//   spellType,
+//   specialAbility
+// ) {
+//   Warrior.call(this, health, strength, agility, weaponType);
+//   Mage.call(this, health, strength, agility, spellType);
+//   this.specialAbility = specialAbility;
+// }
+// Hero.prototype = Object.create(Warrior.prototype);
+// Object.assign(Hero.prototype, Mage.prototype);
+// Hero.prototype.constructor = Hero;
+
+// // Create Enemy constructor function inheriting Character
+// function Enemy(health, strength, agility, enemyType) {
+//   Character.call(this, health, strength, agility);
+//   this.enemyType = enemyType;
+// }
+// Enemy.prototype = Object.create(Character.prototype);
+// Enemy.prototype.constructor = Enemy;
+
+// let warrior1 = new Warrior(100, 50, 30, "sword");
+// let mage1 = new Mage(80, 20, 50, "fireball");
+// let archer1 = new Archer(90, 40, 40, "poison");
+// let hero1 = new Hero(120, 60, 40, "axe", "ice", "double damage");
+// let enemy1 = new Enemy(200, 80, 20, "goblin");
+
+// console.log(warrior1);
+// console.log(mage1);
+// console.log(archer1);
+// console.log(hero1);
+// console.log(enemy1);
+
+// class Message {
+//   constructor(sender, receiver, messageContent) {
+//     this.sender = sender;
+//     this.receiver = receiver;
+//     this.messageContent = messageContent;
+//   }
+
+//   static totalMessages = 0;
+//   static status = false;
+
+//   static recordMessage() {
+//     this.totalMessages++;
+//   }
+
+//   static changeStatus() {
+//     this.status = !this.status;
+//     console.log(
+//       `The status has been changed to ${this.status ? "online" : "offline"}`
+//     );
+//   }
+
+//   sendMessage() {
+//     Message.recordMessage();
+//     console.log(
+//       `The message \'${this.messageContent}\' has sent from \'${this.sender}\' to \'${this.receiver}\'`
+//     );
+//   }
+
+//   displayDetails() {
+//     const detail = {
+//       sender: this.sender,
+//       receiver: this.receiver,
+//       messageContent: this.messageContent,
+//       status: Message.status,
+//       totalMessage: Message.totalMessages,
+//     };
+
+//     console.log(detail);
+//   }
+// }
+
+// Message.changeStatus();
+// const myMessage = new Message("John", "Jane", "Hello");
+// myMessage.sendMessage();
+// myMessage.displayDetails();
+
+// class Account {
+//   #balance;
+//   constructor(accountNumber, balance = 0) {
+//     this.accountNumber = accountNumber;
+//     this.#balance = balance;
+//   }
+
+//   get getbalance() {
+//     return this.#balance;
+//   }
+
+//   set setbalance(amount) {
+//     if (amount < 0) {
+//       console.log("Please enter a positive value for the balance");
+//       return;
+//     }
+
+//     this.#balance = amount;
+//   }
+
+//   deposit(amount) {
+//     this.#balance += amount;
+//   }
+
+//   withdraw(amount) {
+//     if (this.#balance >= amount) {
+//       this.#balance -= amount;
+//     } else {
+//       console.log("Insufficient balance");
+//     }
+//   }
+// }
+
+// const myAccount = new Account("1234567890");
+// myAccount.deposit(500);
+// myAccount.withdraw(1000);
+// console.log(myAccount.getbalance);
+
+// const user1 = {
+//   name: "John Doe",
+//   age: 30,
+//   marks: {
+//     maths: 90,
+//     science: 80,
+//   },
+// };
+
+class User {
+  #name;
+  #email;
+  #password;
+  #posts = [];
+
+  constructor(name, email, password) {
+    this.#name = name;
+    this.#email = email;
+    this.#password = password;
   }
 
-  // methods
-  getTitle() {
-    return this.title;
+  get name() {
+    return this.#name;
   }
-  getArtist() {
-    return this.artist;
+  get email() {
+    return this.#email;
   }
-  getDuration() {
-    return this.duration;
+  get password() {
+    return this.#password;
+  }
+
+  set name(name) {
+    this.#name = name;
+  }
+  set email(email) {
+    this.#email = email;
+  }
+  set password(password) {
+    this.#password = password;
+  }
+
+  addPost(post) {
+    this.#posts.push(post);
+  }
+  deletePost(post) {
+    this.#posts = this.#posts.filter((p) => p !== post);
+  }
+  displayPosts() {
+    this.#posts.forEach((post) => console.log(post.title));
   }
 }
 
-class Song extends Media {
-  // constructor
-  constructor(title, artist, duration, album, genre) {
-    super(title, artist, duration);
-    this.album = album;
-    this.genre = genre;
+class Post extends User {
+  #title;
+  #content;
+  #date;
+  #likeCount;
+
+  constructor(name, email, password, title, content, date) {
+    super(name, email, password);
+    this.#title = title;
+    this.#content = content;
+    this.#date = date;
+    this.#likeCount = 0;
   }
 
-  // methods
-  getAlbum() {
-    return this.album;
+  get title() {
+    return this.#title;
   }
-  getGenre() {
-    return this.genre;
+  get content() {
+    return this.#content;
+  }
+  get date() {
+    return this.#date;
+  }
+  get likeCount() {
+    return this.#likeCount;
+  }
+
+  set title(title) {
+    this.#title = title;
+  }
+  set content(content) {
+    this.#content = content;
+  }
+  set date(date) {
+    this.#date = date;
+  }
+
+  addLike() {
+    this.#likeCount++;
+  }
+  displayDetails() {
+    const details = {
+      Owner: this.name,
+      Title: this.#title,
+      Content: this.#content,
+      Date: this.#date,
+      Likes: this.#likeCount,
+    };
+
+    console.log(JSON.stringify(details));
   }
 }
 
-class PopSong extends Song {
-  // constructor
-  constructor(title, artist, duration, album, genre, danceability, energy) {
-    super(title, artist, duration, album, genre);
-    this.danceability = danceability;
-    this.energy = energy;
-  }
-
-  // methods
-  getDanceability() {
-    return this.danceability;
-  }
-  getEnergy() {
-    return this.energy;
-  }
-}
-
-class RockSong extends Song {
-  // constructor
-  constructor(title, artist, duration, album, genre, distortion, tempo) {
-    super(title, artist, duration, album, genre);
-    this.distortion = distortion;
-    this.tempo = tempo;
-  }
-
-  // methods
-  getDistortion() {
-    return this.distortion;
-  }
-  getTempo() {
-    return this.tempo;
-  }
-}
-
-class Podcast extends Media {
-  // constructor
-  constructor(title, artist, duration, host, topic) {
-    super(title, artist, duration);
-    this.host = host;
-    this.topic = topic;
-  }
-
-  // methods
-  getHost() {
-    return this.host;
-  }
-  getTopic() {
-    return this.topic;
-  }
-}
-
-class NewsPodcast extends Podcast {
-  // constructor
-  constructor(title, artist, duration, host, topic, source) {
-    super(title, artist, duration, host, topic);
-    this.source = source;
-  }
-
-  // methods
-  getSource() {
-    return this.source;
-  }
-  getDuration() {
-    return this.duration;
-  }
-}
-
-class ComedyPodcast extends Podcast {
-  // constructor
-  constructor(title, artist, duration, host, topic, comedian, rating) {
-    super(title, artist, duration, host, topic);
-    this.comedian = comedian;
-    this.rating = rating;
-  }
-
-  // methods
-  getComedian() {
-    return this.comedian;
-  }
-  getRating() {
-    return this.rating;
-  }
-}
-
-const popSong = new PopSong(
-  "Shape of You",
-  "Ed Sheeran",
-  235,
-  "÷",
-  "Pop",
-  0.825,
-  0.652
+const user1 = new User("John", "john@example.com", "password123");
+const post1 = new Post(
+  "John",
+  "john@example.com",
+  "password123",
+  "My first post",
+  "Lorem ipsum dolor sit amet",
+  "2021-01-01"
 );
-console.log(popSong.getTitle()); // should output 'Shape of You'
-console.log(popSong.getArtist()); // should output 'Ed Sheeran'
-console.log(popSong.getDuration()); // should output 235
-
-console.log(popSong.getAlbum()); // should output '÷'
-console.log(popSong.getGenre()); // should output 'Pop'
-console.log(popSong.getDanceability()); // should output 0.825
-console.log(popSong.getEnergy()); // should output 0.652
-
-const rockSong = new RockSong(
-  "Stairway to Heaven",
-  "Led Zeppelin",
-  482,
-  "Led Zeppelin IV",
-  "Rock",
-  0.056,
-  63.5
+const post2 = new Post(
+  "John",
+  "john@example.com",
+  "password123",
+  "My second post",
+  "Consectetur adipiscing elit",
+  "2021-01-02"
 );
-console.log(rockSong.getTitle()); // should output 'Stairway to Heaven'
-console.log(rockSong.getArtist()); // should output 'Led Zeppelin'
-console.log(rockSong.getDuration()); // should output 482
-console.log(rockSong.getAlbum()); // should output 'Led Zeppelin IV'
-console.log(rockSong.getGenre()); // should output 'Rock'
-console.log(rockSong.getDistortion()); // should output 0.056
-console.log(rockSong.getTempo()); // should output 63.5
 
-const newsPodcast = new NewsPodcast(
-  "The Daily",
-  "The New York Times",
-  30,
-  "Michael Barbaro",
-  "News",
-  "The New York Times"
-);
-console.log(newsPodcast.getTitle()); // should
-// output 'The Daily'
-console.log(newsPodcast.getArtist()); // should output 'The New York Times'
-console.log(newsPodcast.getDuration()); // should output 30
-console.log(newsPodcast.getHost()); // should output 'Michael Barbaro'
-console.log(newsPodcast.getTopic()); // should output 'News'
-console.log(newsPodcast.getSource()); // should output 'The New York Times'
+user1.addPost(post1);
+user1.addPost(post2);
 
-const comedyPodcast = new ComedyPodcast(
-  "My Favorite Murder",
-  "Karen Kilgariff and Georgia Hardstark",
-  60,
-  "Karen Kilgariff and Georgia Hardstark",
-  "Comedy",
-  "Karen Kilgariff and Georgia Hardstark",
-  4.8
-);
-console.log(comedyPodcast.getTitle()); // should output 'My Favorite Murder'
-console.log(comedyPodcast.getArtist()); // should output 'Karen Kilgariff and Georgia Hardstark'
-console.log(comedyPodcast.getDuration()); // should output 60
-console.log(comedyPodcast.getHost()); // should output 'Karen Kilgariff and Georgia Hardstark'
-console.log(comedyPodcast.getTopic()); // should output 'Comedy'
-console.log(comedyPodcast.getComedian()); // should output 'Karen Kilgariff and Georgia Hardstark'
+post1.addLike();
+post1.addLike();
 
-console.log(comedyPodcast.getRating()); // should output 4.8
+user1.displayPosts();
+// Output:
+// Posts by John:
+// - My first post
+// - My second post
+
+post1.displayDetails();
+// Output:
+// Owner: John
+// Title: My first post
+// Content: Loremipsum dolor sit amet
+// Date: 2021-01-01
+// Likes: 2

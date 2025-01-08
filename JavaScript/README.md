@@ -993,3 +993,215 @@ const Person = class {
 - In `JavaScript`, inheritance can be achieved using the `extends` keyword.
 
 ##### Inheritance in Constructor Functions
+
+- [Example](./Test/script.js#L1238) <!-- line 1238 -->
+
+#### Static Keyword
+
+- The `static` keyword is used to define a static method for a class.
+- Static methods are called on the class itself, not on instances of the class.
+
+```javascript
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  static createAnonymous() {
+    return new Person('Anonymous', 0);
+  }
+}
+
+const anonymous = Person.createAnonymous();
+```
+
+#### Getters and Setters in JavaScript
+
+- **Getters** and **Setters** are special methods that allow you to define the behavior of getting and setting the properties of an object.
+
+##### Get
+
+- **Getters** are used to get the value of a property.
+- Even though it is a property, it is called like a method.
+- Although it is a property, we cannot manually change it. To do so we need to use a **setter**.
+
+```javascript
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+
+const person = new Person('John', 'Doe');
+console.log(person.firstName); // John
+console.log(person.lastName); // Doe
+console.log(person.fullName); // John Doe
+```
+
+##### Set
+
+- **Setters** are used to set the value of a property.
+- Even though it is a property, it is called like a method.
+
+```javascript
+class Person {
+  constructor(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+
+  set fullName(name) {
+    const [firstName, lastName] = name.split(' ');
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+}
+```
+
+## JSON
+
+- **JSON** stands for **JavaScript Object Notation**.
+- **JSON** is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate.
+- **JSON** is language-independent, but uses conventions that are familiar to programmers of the `C` family of languages, including `C`, `C++`, `C#`, `Java`, `JavaScript`, `Perl`, `Python`, and many others.
+- **JSON** is built on two structures:
+  - A collection of key/value pairs. In various languages, this is realized as an object, record, struct, dictionary, hash table, keyed list, or associative array.
+  - An ordered list of values. In most languages, this is realized as an array, vector, list, or sequence.
+- The **keys** are always strings, and the **values** can be any of the seven data types.
+- The **values** can be:
+  - **string** (in double quotes)
+  - **number**
+  - **object** (in curly braces)
+  - **array** (in square brackets)
+  - **true**
+  - **false**
+  - **null**
+- [Example](./Test//details.json)
+- JavaScript provides a built-in method called `JSON.stringify()` to convert an object into a JSON string.
+- JavaScript provides a built-in method called `JSON.parse()` to convert a JSON string into an object.
+
+```javascript
+const personObj = {
+  name: 'John Doe',
+  age: 30,
+  city: 'New York'
+};
+
+const personJsonStr = JSON.stringify(personObj);
+console.log(personJson);
+// Output: {"name":"John Doe","age":30,"city":"New York"}
+
+const personStr = '{"name":"Jane Doe","age":25,"city":"Los Angeles"}';
+const personJsonObj = JSON.parse(personStr);
+console.log(personJsonObj);
+// Output: { name: 'Jane Doe', age: 25, city: 'Los Angeles' }
+```
+
+## Copies
+
+- When copying an object in `JavaScript`, there are two types of copies:
+  - **Shallow Copy**
+  - **Deep Copy**
+- Normally when you copy an object in `JavaScript`, you are copying a reference to the object, not the object itself.
+- This means that if you **modify** the `copied object`, the `original object` will also be **modified**.
+
+```javascript
+const user1 = {
+  name: 'John Doe',
+  age: 30
+}
+
+const user2 = user1; // this is passing the reference of user1 to user2
+console.log(user1); // { name: 'John Doe', age: 30 }
+console.log(user2); // { name: 'John Doe', age: 30 }
+
+user2.name = 'Jane Doe';
+console.log(user1); // { name: 'Jane Doe', age: 30 }
+console.log(user2); // { name: 'Jane Doe', age: 30 }
+```
+
+### Shallow Copy
+
+- A **shallow copy** is a copy of an object that only copies the first level of the object.
+
+```javascript
+const user1 = {
+  name: 'John Doe',
+  age: 30,
+}
+
+const user2 = {...user1}; // this is a shallow copy
+console.log(user1); // { name: 'John Doe', age: 30 }
+console.log(user2); // { name: 'John Doe', age: 30 }
+
+user2.name = 'Jane Doe';
+console.log(user1); // { name: 'John Doe', age: 30 }
+console.log(user2); // { name: 'Jane Doe', age: 30 }
+
+// we can also use Object.assign to make a shallow copy
+const user3 = Object.assign({}, user1);
+console.log(user1); // { name: 'John Doe', age: 30 }
+console.log(user3); // { name: 'John Doe', age: 30 }
+
+user3.name = 'Alice Doe';
+console.log(user1); // { name: 'John Doe', age: 30 }
+console.log(user3); // { name: 'Alice Doe', age: 30 }
+```
+
+- **Shallow Copy** only copies the first level of the object. If the object has nested objects, the nested objects will still be passed by reference.
+
+```javascript
+const user1 = {
+  name: 'John Doe',
+  age: 30,
+  address: {
+    city: 'New York',
+    country: 'USA'
+  }
+}
+
+const user2 = {...user1}; // this is a shallow copy
+console.log(user1); // { name: 'John Doe', age: 30, address: { city: 'New York', country: 'USA' } }
+console.log(user2); // { name: 'John Doe', age: 30, address: { city: 'New York', country: 'USA' } }
+
+user2.name = 'Jane Doe';
+user2.address.city = 'Los Angeles';
+console.log(user1); // { name: 'John Doe', age: 30, address: { city: 'Los Angeles', country: 'USA' } }
+console.log(user2); // { name: 'Jane Doe', age: 30, address: { city: 'Los Angeles', country: 'USA' } } // here the address is still passed by reference and changes in both the objects
+```
+
+### Deep Copy
+
+- A **deep copy** is a copy of an object that copies all levels of the object.
+
+```javascript
+const user1 = {
+  name: 'John Doe',
+  age: 30,
+  address: {
+    city: 'New York',
+    country: 'USA'
+  }
+}
+
+const user2 = JSON.parse(JSON.stringify(user1)); // this is a deep copy
+console.log(user1); // { name: 'John Doe', age: 30, address: { city: 'New York', country: 'USA' } }
+console.log(user2); // { name: 'John Doe', age: 30, address: { city: 'New York', country: 'USA' } }
+
+user2.name = 'Jane Doe';
+user2.address.city = 'Los Angeles';
+console.log(user1); // { name: 'John Doe', age: 30, address: { city: 'New York', country: 'USA' } }
+console.log(user2); // { name: 'Jane Doe', age: 30, address: { city: 'Los Angeles', country: 'USA' } }
+```
+
+- **Deep Copy** copies all levels of the object. If the object has nested objects, the nested objects will also be copied.
+- But, if the object has functions, `undefined`, or `symbol` properties, the `JSON.stringify()` method will remove them from the object.
