@@ -1,5 +1,24 @@
 # What Is JavaScript
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [History of JavaScript](#history-of-javascript)
+- [First JS On Browser](#writing-first-javascript-code-in-the-browser)
+- [Execution Context](#execution-context)
+- [Hoisting](#hoisting)
+- [Call Stack](#call-stack)
+- [Scope](#scope)
+- [Strict Mode](#strict-mode)
+- [Closures](#closures)
+- [Currying](#currying)
+- [New Keyword](#new-keyword)
+- [This Keyword](#this-keyword)
+- [Object Oriented Programming (OOP) in JavaScript](#object-oriented-programming-oop-in-javascript)
+- [JSON](#json)
+- [Copies](#copies)
+- [DOM](#dom)
+
 ## Introduction
 
 - **`JavaScript`** is a
@@ -1205,3 +1224,21 @@ console.log(user2); // { name: 'Jane Doe', age: 30, address: { city: 'Los Angele
 
 - **Deep Copy** copies all levels of the object. If the object has nested objects, the nested objects will also be copied.
 - But, if the object has functions, `undefined`, or `symbol` properties, the `JSON.stringify()` method will remove them from the object.
+
+## DOM
+
+- [Refer here](./DOM/)
+- The `Document Object Model` (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of nodes.
+- The `DOM` is used to interact with the structure of a web page using `JavaScript`.
+- It can be interacted by utilizing the `document` object or `DOM API`.
+- An `API`, or **Application Program Interface** is a set of rules and protocols that allow different software applications to communicate with each other.
+
+### How to access the nodes in DOM
+
+- **getElementById()**: This method returns the element that has the ID attribute with the specified value.
+- **getElementsByClassName()**: This method returns a collection of all elements in the document with the specified class name.
+- **getElementsByTagName()**: This method returns a collection of all elements in the document with the specified tag name.
+- **querySelector()**: This method returns the first element that matches a specified CSS selector(s) in the document.
+- **querySelectorAll()**: This method returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors.
+
+These are some of the most commonly used methods to access the nodes in the DOM.
