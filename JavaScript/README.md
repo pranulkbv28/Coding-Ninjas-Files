@@ -1242,3 +1242,15 @@ console.log(user2); // { name: 'Jane Doe', age: 30, address: { city: 'Los Angele
 - **querySelectorAll()**: This method returns a static (not live) NodeList representing a list of the document's elements that match the specified group of selectors.
 
 These are some of the most commonly used methods to access the nodes in the DOM.
+
+### Creating Elements
+
+- The `document.createElement()` method creates the HTML element specified by the tagName parameter.
+
+### Removing Elements
+
+- The `remove()` method removes the element from the DOM.
+
+### Event Listeners
+
+- **Event Listeners** are used to listen for events on a specific element and execute a block of code when the event is triggered.

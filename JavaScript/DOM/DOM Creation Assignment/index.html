@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    #header {
+      width: 100%;
+      height: 100px;
+      background-color: #04f2f2;
+      justify-content: baseline;
+      text-align: center;
+      padding-top: 1%;
+      margin: 0;
+    }
+    body {
+      background-color: #00ffff;
+      margin: 0px;
+    }
+    .blog-list {
+      list-style: none;
+      margin: 40;
+      padding: 40;
+      background-color: #f0f8ff;
+    }
+
+    .blog-post {
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .blog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .blog-title {
+      font-size: 30px;
+      margin: 0;
+    }
+
+    .blog-date {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .blog-content {
+      margin: 0;
+      line-height: 1.5;
+    }
+  </style>
+  <body>
+    <div id="header">
+      <h1>My Blogs</h1>
+    </div>
+    <ul class="blog-list"></ul>
+
+    <script>
+      const blogData = [
+        {
+          title: "First Blog Post",
+          date: "January 1, 2022",
+          content: "this is content of the first blog page.",
+        },
+        {
+          title: "Second Blog Post",
+          date: "February 1, 2022",
+          content: "This is the content of the second blog post.",
+        },
+        {
+          title: "Third Blog Post",
+          date: "March 1, 2022",
+          content: "This is the content of the third blog post.",
+        },
+      ];
+      //Create your function here with the name addBlog which takes a blog object as parameter
+      //Call each object present in blogData with addBlog.
+      //If page does not update the changes automatically please refresh
+
+      function addBlog(blog) {
+        const blogContent = document.createElement("p");
+        blogContent.className = "blog-content";
+        blogContent.textContent = blog.content;
+
+        const blogDate = document.createElement("p");
+        blogDate.className = "blog-date";
+        blogDate.textContent = blog.date;
+
+        const blogTitle = document.createElement("h2");
+        blogTitle.className = "blog-title";
+        blogTitle.textContent = blog.title;
+
+        const blogHeader = document.createElement("div");
+        blogHeader.className = "blog-header";
+
+        const blogPost = document.createElement("div");
+        blogPost.className = "blog-post";
+
+        blogHeader.append(blogTitle, blogDate);
+
+        blogPost.append(blogHeader, blogContent);
+
+        const blogList = document.querySelector(".blog-list");
+        blogList.appendChild(blogPost);
+      }
+
+      blogData.forEach((blog) => {
+        addBlog(blog);
+      });
+    </script>
+  </body>
+</html>
