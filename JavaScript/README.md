@@ -1253,4 +1253,4 @@ These are some of the most commonly used methods to access the nodes in the DOM.
 
 ### Event Listeners
 
-- **Event Listeners** are used to listen for events on a specific element and execute a block of code when the event is triggered.
+- **Event Listeners** are used to listen for events on a specific element and execute a block of code when the `event` is triggered.
