@@ -1,4 +1,4 @@
-# What Is JavaScript
+# What Is JavaScript?
 
 ## Table of Contents
 
