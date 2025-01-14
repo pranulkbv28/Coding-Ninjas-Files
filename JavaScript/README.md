@@ -1269,3 +1269,24 @@ document.getElementById('parent').addEventListener('click', function(event) {
   }
 });
 ```
+
+#### Event Bubbling
+
+- **Event Bubbling** is a mechanism in which an event is first captured and handled by the innermost element and then propagated to the outer elements.
+
+```javascript
+document.getElementById('parent').addEventListener('click', function(event) {
+  console.log('Parent Clicked');
+});
+```
+
+#### Event Propagation
+
+- **Event Propagation** is the mechanism by which an event is first captured and handled by the innermost element and then propagated to the outer elements.
+
+```javascript
+document.getElementById('child').addEventListener('click', function(event) {
+  console.log('Child Clicked');
+  event.stopPropagation();
+});
+```
