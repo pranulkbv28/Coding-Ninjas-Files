@@ -1254,3 +1254,18 @@ These are some of the most commonly used methods to access the nodes in the DOM.
 ### Event Listeners
 
 - **Event Listeners** are used to listen for events on a specific element and execute a block of code when the `event` is triggered.
+- **Implementation**:
+  - **Inline Event Handlers**: This is the traditional way of adding event listeners to HTML elements. [Check this](./DOM/DOM%20Deletion/index.html#L10) <!-- line 10 -->
+  - **Event Listener**: This is the modern way of adding event listeners to HTML elements. [Check this](./DOM/DOM%20Deletion/script.js#L10) <!-- line 10 -->
+
+#### Event Delegaion
+
+- **Event Delegation** is a technique in which we attach a single event listener to a parent element that will fire for all children matching a selector, whether they are present now or added in the future.
+
+```javascript
+document.getElementById('parent').addEventListener('click', function(event) {
+  if (event.target.tagName === 'LI') {
+    event.target.remove();
+  }
+});
+```
