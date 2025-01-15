@@ -38,6 +38,8 @@ const allSeats = document.querySelectorAll("#seatCont .seat");
 const numberOfSeat = document.getElementById("numberOfSeat");
 const totalPrice = document.getElementById("totalPrice");
 
+totalPrice.innerText = `$ 0`;
+
 // Set data-seat attribute for each seat
 Array.from(allSeats).forEach((seat, idx) => {
   seat.setAttribute("data-seat", idx + 1);
@@ -48,51 +50,87 @@ const unoccupiedSeats = Array.from(allSeats).filter(
   (seat) => !seat.classList.contains("occupied")
 );
 
+const seatClickListener = (e) => {
+  const seat = e.target;
+  seat.classList.toggle("selected");
+  const seatNumber = e.target.getAttribute("data-seat");
+
+  if (seat.classList.contains("selected")) {
+    selectedSeats.push(seatNumber);
+  } else {
+    selectedSeats = selectedSeats.filter((s) => s !== seatNumber);
+  }
+
+  // Update the selectedSeatsHolder
+  if (selectedSeats.length > 0) {
+    selectedSeatsHolder.innerHTML = "";
+    selectedSeats.forEach((seat) => {
+      const span = document.createElement("span");
+      span.style.border = "2px solid lightgreen";
+      span.style.color = "lightgreen";
+      span.style.padding = "5px";
+      span.style.display = "flex";
+      span.style.justifyContent = "center";
+      span.style.alignItems = "center";
+      span.innerText = seat;
+      selectedSeatsHolder.appendChild(span);
+    });
+    numberOfSeat.innerText = selectedSeats.length;
+
+    const pricePerSeat = parseFloat(moviePrice.innerText.split("$")[1]);
+    totalPrice.innerText = `$ ${selectedSeats.length * pricePerSeat}`;
+  } else {
+    selectedSeatsHolder.innerHTML = `<span class="noSelected">No Seat Selected</span>`;
+    numberOfSeat.innerText = 0;
+    totalPrice.innerText = `$ 0`;
+  }
+
+  console.log(selectedSeats);
+};
+
 // Add event listener to each unoccupied seat
 unoccupiedSeats.forEach((seat) => {
-  seat.addEventListener("click", (e) => {
-    seat.classList.toggle("selected");
-    const seatNumber = e.target.getAttribute("data-seat");
-
-    if (seat.classList.contains("selected")) {
-      selectedSeats.push(seatNumber);
-    } else {
-      selectedSeats = selectedSeats.filter((s) => s !== seatNumber);
-    }
-
-    // Update the selectedSeatsHolder
-    if (selectedSeats.length > 0) {
-      selectedSeatsHolder.innerHTML = "";
-      selectedSeats.forEach((seat) => {
-        const span = document.createElement("span");
-        span.style.border = "2px solid lightgreen";
-        span.style.color = "lightgreen";
-        span.style.padding = "5px";
-        span.style.display = "flex";
-        span.style.justifyContent = "center";
-        span.style.alignItems = "center";
-        span.innerText = seat;
-        selectedSeatsHolder.appendChild(span);
-      });
-      numberOfSeat.innerText = selectedSeats.length;
-
-      totalPrice.innerText = `$ ${
-        selectedSeats.length * parseInt(moviePrice.innerText.split("$")[1])
-      }`;
-    } else {
-      selectedSeatsHolder.innerHTML = `<span class="noSelected">No Seat Selected</span>`;
-    }
-
-    console.log(selectedSeats);
-  });
+  seat.addEventListener("click", seatClickListener);
 });
+
 //Add eventLsiter to continue Button
 const proceedBtn = document.getElementById("proceedBtn");
 proceedBtn.addEventListener("click", () => {
   if (selectedSeats.length === 0) {
-    alert("Please select at least one seat");
+    alert("Oops no seat Selected");
   } else {
-    alert("Proceed to Payment");
+    alert(`Yayy! Your Seats have been booked`);
+    allSeats.forEach((seat) => {
+      if (selectedSeats.includes(seat.getAttribute("data-seat"))) {
+        seat.classList.remove("selected");
+        seat.classList.add("occupied");
+        seat.removeEventListener("click", seatClickListener);
+      }
+    });
+    // Clear selected seats after proceeding
+    selectedSeats = [];
+    selectedSeatsHolder.innerHTML = `<span class="noSelected">No Seat Selected</span>`;
+    numberOfSeat.innerText = 0;
+    totalPrice.innerText = `$ 0`;
   }
 });
-//Add eventListerner to Cancel Button
+
+// Add event listener to Cancel Button
+const cancelBtn = document.getElementById("cancelBtn");
+cancelBtn.addEventListener("click", () => {
+  if (selectedSeats.length === 0) {
+    alert("no Seat Selected");
+  } else {
+    // alert("All selected seats will be cleared");
+    allSeats.forEach((seat) => {
+      if (selectedSeats.includes(seat.getAttribute("data-seat"))) {
+        seat.classList.remove("selected");
+      }
+    });
+    // Clear selected seats after canceling
+    selectedSeats = [];
+    selectedSeatsHolder.innerHTML = `<span class="noSelected">No Seat Selected</span>`;
+    numberOfSeat.innerText = 0;
+    totalPrice.innerText = `$ 0`;
+  }
+});
