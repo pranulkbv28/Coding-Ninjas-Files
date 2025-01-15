@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Event Propagation</title>
+  </head>
+  <body>
+    <style>
+      body * {
+        margin: 10px;
+        border: 2px solid red;
+      }
+    </style>
+    <div style="background-color: yellow">
+      <div id="innerDiv" style="background-color: yellowgreen">
+        <h3 style="background-color: green">Inner Heading</h3>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

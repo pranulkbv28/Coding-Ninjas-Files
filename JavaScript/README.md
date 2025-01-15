@@ -1290,3 +1290,13 @@ document.getElementById('child').addEventListener('click', function(event) {
   event.stopPropagation();
 });
 ```
+
+#### Event Capturing
+
+- **Event Capturing** is the mechanism by which an event is first captured and handled by the outermost element and then propagated to the inner elements.
+
+```javascript
+document.getElementById('parent').addEventListener('click', function(event) {
+  console.log('Parent Clicked');
+}, true); // here, the 3rd parameter is set to true, which means the event is captured
+```
