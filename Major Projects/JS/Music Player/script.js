@@ -1,8 +1,16 @@
-const allNodes = document.body.childNodes;
-const body = document.body;
-const mainContainer = document.getElementById("mainContainer");
-const themeSection = document.getElementById("themeSection");
+// all initialisations
 
+// initialising all nodes
+const allNodes = document.body.childNodes;
+
+// initialising body
+const body = document.body;
+
+// initialising main container
+const mainContainer = document.getElementById("mainContainer");
+
+// initialising theme section
+const themeSection = document.getElementById("themeSection");
 const themeToggle = document.getElementById("themeToggle");
 const themeSlider = document.getElementById("slider");
 themeSlider.addEventListener("click", () => {
@@ -63,8 +71,20 @@ songCardSection.classList.add("section-color-light");
 // initialising playlist section
 const playlistSection = document.getElementById("playlistSection");
 playlistSection.classList.add("section-color-light");
+const playlistName = document.getElementById("playlistName");
+const createPlaylist = document.getElementById("createPlaylist");
+const playlistSongsContainer = document.getElementById(
+  "playlistSongsContainer"
+);
+const playlistSongsContainerHeader = document.getElementById(
+  "playlistSongsContainerHeader"
+);
+const playlistsContainer = document.getElementById("playlistsContainer");
+
+// initialising footer section
 const footerSection = document.getElementById("footerSection");
 
+// all songs data
 const allSongsData = [
   {
     id: 1,
@@ -199,6 +219,9 @@ const allSongsData = [
   },
 ];
 
+const myPlaylists = [];
+let selectedPlaylist = "";
+
 // select options render
 let allGenreArray = allSongsData.map((song) => song.genre);
 // const genreArray = []
@@ -219,7 +242,6 @@ genreArray.forEach((genre) => {
 
 // filter by genre
 filterByGenreSection.addEventListener("change", (e) => {
-  // console.log(e.target.value);
   allSongsRender(e.target.value);
 });
 
@@ -241,7 +263,6 @@ function allSongsRender(genre) {
         songCardRender(song);
       });
       songsContainer.appendChild(songCard);
-      // <img class="song-section-image" src="${song.songImage}" alt="${song.name}" />
     });
   } else {
     const filteredSongs = allSongsData.filter((song) => song.genre === genre);
@@ -253,11 +274,11 @@ function allSongsRender(genre) {
               <span class="song-name">${song.name}</span> - <span class="song-artist">${song.artist}</span>
             </div>
           `;
+      songCard.addEventListener("click", () => {
+        console.log(song);
+        songCardRender(song);
+      });
       songsContainer.appendChild(songCard);
-      // <p>${song.genre}</p>
-      // <p>${song.releaseYear}</p>
-      // <p>${song.album}</p>
-      // <img class="song-section-image" src="${song.songImage}" alt="${song.name}" />
     });
   }
 }
@@ -267,6 +288,9 @@ allSongsRender("All");
 function songCardRender(song) {
   songCardSection.innerHTML = "";
 
+  // creating elements
+
+  // song card div
   const songCardDiv = document.createElement("div");
   songCardDiv.classList.add("song-card");
   const songImage = document.createElement("img");
@@ -279,16 +303,18 @@ function songCardRender(song) {
   songArtistPara.classList.add("song-artist");
   songArtistPara.textContent = song.artist;
 
+  // song audio container
   const songAudioContainer = document.createElement("div");
   songAudioContainer.classList.add("song-audio-container");
   const audioController = document.createElement("audio");
-  // "./assets/Billie Eilish - Bad Guy.mp3";
   audioController.src = `./assets/${song.artist} - ${song.name}.mp3`;
   console.log(`./assets/${song.artist} - ${song.name}.mp3`);
   audioController.controls = true;
 
+  // song options div
   const songOptionsDiv = document.createElement("div");
   songOptionsDiv.classList.add("song-options");
+  // song tracker div
   const songTracker = document.createElement("div");
   songTracker.classList.add("song-tracker");
   const prevSong = document.createElement("button");
@@ -302,21 +328,43 @@ function songCardRender(song) {
     songCardRender(findSong(song.id + 1));
   });
   songTracker.append(prevSong, nextSong);
+  // playlist options div
   const playlistOptionDiv = document.createElement("div");
   playlistOptionDiv.classList.add("playlist-options");
   const addToplaylistButton = document.createElement("button");
   addToplaylistButton.textContent = "Add to Playlist";
+  addToplaylistButton.addEventListener("click", () => {
+    if (selectedPlaylist === "") {
+      alert("Please select a playlist");
+      return;
+    }
+
+    const playlist = myPlaylists.filter(
+      (playlist) => playlist.name === selectedPlaylist
+    );
+    playlist[0].songs.push(song);
+    renderMessage("Song added to playlist");
+    console.log(playlist[0]);
+    renderPlaylistSongs(playlist[0]);
+    setTimeout(() => {
+      removeMessage();
+    }, 2000);
+  });
   playlistOptionDiv.appendChild(addToplaylistButton);
 
   // appending the elements
+
+  // song card div
   songCardDiv.appendChild(songImage);
   songCardDiv.appendChild(songNamePara);
   songCardDiv.appendChild(songArtistPara);
   songCardSection.appendChild(songCardDiv);
 
+  // song audio container
   songAudioContainer.appendChild(audioController);
   songCardSection.appendChild(songAudioContainer);
 
+  // song options div
   songOptionsDiv.appendChild(songTracker);
   songOptionsDiv.appendChild(playlistOptionDiv);
   songCardSection.appendChild(songOptionsDiv);
@@ -332,6 +380,94 @@ function findSong(id) {
   return song[0];
 }
 
+// function add playlist
+createPlaylist.addEventListener("click", addPlaylist);
+
+function addPlaylist() {
+  const newPlaylist = {
+    name: playlistName.value,
+    songs: [],
+  };
+
+  if (newPlaylist.name === "") {
+    alert("Please enter a valid playlist name");
+    playlistName.value = "";
+    return;
+  } else if (
+    myPlaylists.some(
+      (playlist) =>
+        playlist.name.toLowerCase() === newPlaylist.name.toLowerCase()
+    )
+  ) {
+    alert("Playlist name already exists");
+    playlistName.value = "";
+    return;
+  }
+
+  myPlaylists.push(newPlaylist);
+  renderPlaylists();
+
+  playlistName.value = "";
+}
+
+// function to render playlists
+function renderPlaylists() {
+  playlistsContainer.innerHTML = "";
+  selectedPlaylist = "";
+  myPlaylists.forEach((playlist) => {
+    const playlistCard = document.createElement("div");
+    playlistCard.classList.add("playlist-details");
+    playlistCard.innerHTML = `
+      <span class="playlist-name">${playlist.name}</span>
+    `;
+    playlistCard.addEventListener("click", () => {
+      const allPlaylists = document.querySelectorAll(".playlist-details");
+      allPlaylists.forEach((playlist) => {
+        playlist.classList.remove("playlist-active");
+      });
+      playlistCard.classList.add("playlist-active");
+      selectedPlaylist = playlist.name;
+      console.log(selectedPlaylist);
+      renderPlaylistSongs(playlist);
+    });
+
+    playlistsContainer.appendChild(playlistCard);
+  });
+}
+
+// function to render playlist songs
+function renderPlaylistSongs(playlist) {
+  playlistSongsContainer.innerHTML = "";
+  playlist.songs.forEach((song) => {
+    const songCard = document.createElement("div");
+    songCard.classList.add("song-details-container");
+    songCard.innerHTML = `
+        <div class="song-details">
+          <span class="song-name">${song.name}</span> - <span class="song-artist">${song.artist}</span>
+        </div>
+      `;
+
+    // playing song on click
+    songCard.addEventListener("click", () => {
+      console.log(song);
+      songCardRender(song);
+    });
+
+    // deleting song from playlist
+    songCard.addEventListener("contextmenu", (e) => {
+      e.preventDefault();
+      const index = playlist.songs.indexOf(song);
+      playlist.songs.splice(index, 1);
+      renderMessage("Song removed from playlist");
+      renderPlaylistSongs(playlist);
+      setTimeout(() => {
+        removeMessage();
+      }, 2000);
+    });
+    playlistSongsContainer.appendChild(songCard);
+  });
+}
+
 // footer render
 const currDate = new Date();
 const year = currDate.getFullYear();
@@ -343,3 +479,18 @@ footerSection.innerHTML = `
         © ${year}
     </span>
 `;
+
+// render message container
+const messageContainer = document.createElement("div");
+function renderMessage(message) {
+  messageContainer.classList.add("message-container");
+  messageContainer.innerHTML = `
+    <span>${message}</span>
+  `;
+  mainContainer.appendChild(messageContainer);
+}
+
+// remove message container
+function removeMessage() {
+  messageContainer.remove();
+}

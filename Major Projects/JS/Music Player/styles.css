@@ -50,7 +50,7 @@ a {
 
 .theme-toggle {
   position: absolute;
-  top: 5%;
+  top: 30%;
   right: 10%;
   /* padding: 10px; */
   height: 20px;
@@ -141,7 +141,8 @@ a {
   gap: 10px;
 }
 
-.song-details {
+.song-details,
+.playlist-details {
   border-radius: 8px;
   padding: 10px;
   display: flex;
@@ -151,10 +152,18 @@ a {
   gap: 10px;
   border: 1px solid black;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
 
-.song-details:hover {
-  background-color: rgba(0, 0, 0, 0.1);
+.song-details-dark,
+.playlist-details-dark {
+  background-color: rgb(51, 51, 51);
+}
+
+.song-details:hover,
+.playlist-details:hover {
+  background-color: rgb(51, 51, 51);
+  color: white;
 }
 
 /* end of all songs div */
@@ -212,6 +221,14 @@ a {
   text-align: center;
   background-color: rgb(144, 91, 253);
   padding: 10px;
+  width: 25%;
+  transition: all 0.3s ease-in-out;
+}
+
+.song-options button:hover {
+  background-color: rgba(145, 91, 253, 0.358);
+  /* font-weight: bold; */
+  scale: 1.1;
 }
 
 .playlist-options {
@@ -226,6 +243,21 @@ a {
 
 /* start of plalist section */
 
+#playlistSection>div:nth-child(2),
+#playlistSection>div:nth-child(3) {
+  margin-bottom: 20px;
+}
+
+#playlistSongsContainer,
+#playlistsContainer {
+  max-height: 150px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .playlist-input-container {
   display: flex;
   justify-content: center;
@@ -233,9 +265,20 @@ a {
   gap: 10px;
 }
 
+.playlist-name {
+  font-weight: 600;
+  font-size: medium;
+}
+
+.playlist-active {
+  border: 2px solid red;
+}
+
 /* end of plalist section */
 
 /* end of bodySection */
+
+/* start of footer section */
 
 #footerSection {
   display: flex;
@@ -246,4 +289,39 @@ a {
 
 #footerSection span:first-child {
   margin-bottom: 10px;
+}
+
+/* end of footer section */
+
+.message-container {
+  padding: 10px;
+  border-radius: 16px;
+  background-color: lightgray;
+  color: white;
+  animation: fadeInAndOut 2s linear infinite;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 99999;
+}
+
+/* annimations */
+
+@keyframes fadeInAndOut {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.5;
+  }
 }
