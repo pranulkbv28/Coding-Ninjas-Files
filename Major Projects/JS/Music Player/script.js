@@ -173,50 +173,6 @@ const allSongsData = [
     songImage:
       "https://m.media-amazon.com/images/M/MV5BMTA2NDc3Njg5NDVeQTJeQWpwZ15BbWU4MDc1NDcxNTUz._V1_.jpg",
   },
-  {
-    id: 9,
-    name: "Stairway to Heaven",
-    genre: "Rock",
-    artist: "Led Zeppelin",
-    duration: "8:02",
-    releaseYear: 1971,
-    album: "Led Zeppelin IV",
-    songImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqben79h3kCCNh7MZRmggCsv536EVyghEHUA&s",
-  },
-  {
-    id: 10,
-    name: "Humble",
-    genre: "Hip-Hop",
-    artist: "Kendrik Lamar",
-    duration: "2:57",
-    releaseYear: 2017,
-    album: "DAMN.",
-    songImage:
-      "https://m.media-amazon.com/images/M/MV5BOTUwNzRiNDAtN2E2ZC00ZTk1LWE1OGYtZGU3YjliYTA0NjdhXkEyXkFqcGc@._V1_.jpg",
-  },
-  {
-    id: 11,
-    name: "Hotel California",
-    genre: "Rock",
-    artist: "Eagles",
-    duration: "6:30",
-    releaseYear: 1976,
-    album: "Hotel California",
-    songImage:
-      "https://images.genius.com/6c7e025561819a4af1476af223c1a7f8.600x600x1.jpg",
-  },
-  {
-    id: 12,
-    name: "Sicko Mode",
-    genre: "Hip-Hop",
-    artist: "Travis Scott",
-    duration: "5:12",
-    releaseYear: 2018,
-    album: "Astroworld",
-    songImage:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJie8EXL-PdF-iSuLuvemNmb7s2__RZmWYbA&s",
-  },
 ];
 
 const myPlaylists = [];
