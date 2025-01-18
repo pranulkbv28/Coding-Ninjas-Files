@@ -53,6 +53,7 @@ const bodySection = document.getElementById("bodySection");
 const allSongsSection = document.getElementById("allSongsSection");
 allSongsSection.classList.add("section-color-light");
 const filterByGenreSection = document.getElementById("filterBy");
+const songType = document.getElementById("songType");
 const songsContainer = document.getElementById("songsContainer");
 
 // initialising song card section
@@ -91,7 +92,7 @@ const allSongsData = [
     id: 3,
     name: "Blinding Lights",
     genre: "Pop",
-    artist: "The Weeknd",
+    artist: "The Weekend",
     duration: "3:20",
     releaseYear: 2019,
     album: "After Hours",
@@ -167,7 +168,7 @@ const allSongsData = [
     id: 10,
     name: "Humble",
     genre: "Hip-Hop",
-    artist: "Kendrick Lamar",
+    artist: "Kendrik Lamar",
     duration: "2:57",
     releaseYear: 2017,
     album: "DAMN.",
@@ -225,17 +226,19 @@ filterByGenreSection.addEventListener("change", (e) => {
 // all songs render
 function allSongsRender(genre) {
   songsContainer.innerHTML = "";
+  songType.textContent = `${genre} Songs`;
   if (genre === "All") {
     allSongsData.forEach((song) => {
       const songCard = document.createElement("div");
-      songCard.classList.add("song-card");
+      songCard.classList.add("song-details-container");
       songCard.innerHTML = `
         <div class="song-details">
           <span class="song-name">${song.name}</span> - <span class="song-artist">${song.artist}</span>
         </div>
       `;
       songCard.addEventListener("click", () => {
-        console.log(song.name);
+        console.log(song);
+        songCardRender(song);
       });
       songsContainer.appendChild(songCard);
       // <img class="song-section-image" src="${song.songImage}" alt="${song.name}" />
@@ -244,7 +247,7 @@ function allSongsRender(genre) {
     const filteredSongs = allSongsData.filter((song) => song.genre === genre);
     filteredSongs.forEach((song) => {
       const songCard = document.createElement("div");
-      songCard.classList.add("song-card");
+      songCard.classList.add("song-details-container");
       songCard.innerHTML = `
             <div class="song-details">
               <span class="song-name">${song.name}</span> - <span class="song-artist">${song.artist}</span>
@@ -261,6 +264,63 @@ function allSongsRender(genre) {
 allSongsRender("All");
 
 // song card render
+function songCardRender(song) {
+  songCardSection.innerHTML = "";
+
+  const songCardDiv = document.createElement("div");
+  songCardDiv.classList.add("song-card");
+  const songImage = document.createElement("img");
+  songImage.classList.add("song-image");
+  songImage.src = song.songImage;
+  const songNamePara = document.createElement("p");
+  songNamePara.classList.add("song-name");
+  songNamePara.textContent = song.name;
+  const songArtistPara = document.createElement("p");
+  songArtistPara.classList.add("song-artist");
+  songArtistPara.textContent = song.artist;
+
+  const songAudioContainer = document.createElement("div");
+  songAudioContainer.classList.add("song-audio-container");
+  const audioController = document.createElement("audio");
+  // "./assets/Billie Eilish - Bad Guy.mp3";
+  audioController.src = `./assets/${song.artist} - ${song.name}.mp3`;
+  console.log(`./assets/${song.artist} - ${song.name}.mp3`);
+  audioController.controls = true;
+
+  const songOptionsDiv = document.createElement("div");
+  songOptionsDiv.classList.add("song-options");
+  const songTracker = document.createElement("div");
+  songTracker.classList.add("song-tracker");
+  const prevSong = document.createElement("button");
+  prevSong.textContent = "<=";
+  prevSong.addEventListener("click", () => {
+    songCardRender(findSong(song.id - 1));
+  });
+  const nextSong = document.createElement("button");
+  nextSong.textContent = "=>";
+  nextSong.addEventListener("click", () => {
+    songCardRender(findSong(song.id + 1));
+  });
+  songTracker.append(prevSong, nextSong);
+  const playlistOptionDiv = document.createElement("div");
+  playlistOptionDiv.classList.add("playlist-options");
+  const addToplaylistButton = document.createElement("button");
+  addToplaylistButton.textContent = "Add to Playlist";
+  playlistOptionDiv.appendChild(addToplaylistButton);
+
+  // appending the elements
+  songCardDiv.appendChild(songImage);
+  songCardDiv.appendChild(songNamePara);
+  songCardDiv.appendChild(songArtistPara);
+  songCardSection.appendChild(songCardDiv);
+
+  songAudioContainer.appendChild(audioController);
+  songCardSection.appendChild(songAudioContainer);
+
+  songOptionsDiv.appendChild(songTracker);
+  songOptionsDiv.appendChild(playlistOptionDiv);
+  songCardSection.appendChild(songOptionsDiv);
+}
 
 // function to get song and card details
 function findSong(id) {

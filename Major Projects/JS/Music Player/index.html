@@ -23,6 +23,7 @@
               <option value="All">All</option>
             </select>
           </div>
+          <h2 id="songType"></h2>
           <div id="songsContainer"></div>
         </div>
         <div id="songCardSection">
@@ -30,11 +31,29 @@
             <audio
               autoplay
               controls
-              src="./assets/Billie Eilish - Bad Guy.mp3"
+              src="./assets/Led Zeppelin - Stairway to Heaven.mp3"
             ></audio>
           </div> -->
         </div>
-        <div id="playlistSection"></div>
+        <div id="playlistSection">
+          <div class="playlist-input-container">
+            <input
+              type="text"
+              name="playlistName"
+              id="playlistName"
+              placeholder="Enter Playlist Name"
+            />
+            <button id="createPlaylist" class="create-playlist">
+              Create Playlist
+            </button>
+          </div>
+          <div id="playlistSongsContainer">
+            <h2>Songs in this Playlist</h2>
+          </div>
+          <div id="playlistsContainer">
+            <h2>My Playlists</h2>
+          </div>
+        </div>
       </section>
       <section id="footerSection"></section>
     </main>
