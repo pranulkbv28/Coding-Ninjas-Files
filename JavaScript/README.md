@@ -18,6 +18,7 @@
 - [JSON](#json)
 - [Copies](#copies)
 - [DOM](#dom)
+- [Asynchronous JavaScript](#asynchronous-javascript)
 
 ## Introduction
 
@@ -1300,3 +1301,33 @@ document.getElementById('parent').addEventListener('click', function(event) {
   console.log('Parent Clicked');
 }, true); // here, the 3rd parameter is set to true, which means the event is captured
 ```
+
+## Asynchronous JavaScript
+
+### Some Async Functions
+
+- **setTimeout()**: This function is used to execute a function after a specified number of milliseconds.
+- **setInterval()**: This function is used to execute a function repeatedly after a specified number of milliseconds.
+- **fetch()**: This function is used to make network requests to a server and handle the response.
+- **XMLHttpRequest()**: This function is used to make network requests to a server and handle the response.
+
+#### SetTimeout
+
+- The `setTimeout()` function is used to execute a function after a specified number of milliseconds.
+- The other code below it will still run while the `setTimeout()` function is waiting to execute the function.
+- If the time is not specified, the function will be executed **immediately**.
+
+```javascript
+setTimeout(() => {
+  console.log('Hello World');
+}, 2000); // here, the function will be executed after 2 seconds
+```
+
+- [Check Here](./Asynchronous%20JS/Test/script.js#8) <!-- line8 -->
+
+#### SetInterval
+
+- The `setInterval()` function is used to execute a function repeatedly after a specified number of milliseconds.
+- The other code below it will still run while the `setInterval()` function is executing the function.
+
+```javascript
