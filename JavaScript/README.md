@@ -1329,5 +1329,40 @@ setTimeout(() => {
 
 - The `setInterval()` function is used to execute a function repeatedly after a specified number of milliseconds.
 - The other code below it will still run while the `setInterval()` function is executing the function.
+- If the time is not specified, the function will be executed and repeated **without any delay**.
+- The `setInterval()` function returns an `interval ID`, which is of **type Number**, that can be used to stop the execution of the function.
 
 ```javascript
+setInterval(() => {
+  console.log('Hello World');
+}, 2000); // here, the function will be executed every 2 seconds
+```
+
+- [Check Here](./Asynchronous%20JS/Test/script.js#L36) <!-- line 36 -->
+
+### Callback Functions in Async JS
+
+- A **callback function** is a function that is passed as an argument to another function and is executed after the completion of that function.
+- `Callback functions` are very helpful in asynchronous programming.
+
+```javascript
+function greet(callback) {
+  setTimeout(() => {
+    console.log('Hello World');
+    callback();
+  }, 2000);
+}
+
+function sayBye() {
+  console.log('Goodbye World');
+}
+
+greet(sayBye);
+```
+
+### Types of Async Callbacks
+
+- **XML HTTP Request**: This is a callback function that is used to make network requests to a server and handle the response.
+- **Fetch API**: This is a callback function that is used to make network requests to a server and handle the response.
+- **Promises**: This is a callback function that is used to handle asynchronous operations in JavaScript.
+- **Async/Await**: This is a callback function that is used to handle asynchronous operations in JavaScript.
