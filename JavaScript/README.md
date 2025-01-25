@@ -1363,6 +1363,8 @@ greet(sayBye);
 ### Types of Async Callbacks
 
 - **XML HTTP Request**: This is a callback function that is used to make network requests to a server and handle the response. [Check Here](./Asynchronous%20JS/User%20Card/script.js#L1) <!-- line 1 -->
-- **Fetch API**: This is a callback function that is used to make network requests to a server and handle the response.
-- **Promises**: This is a callback function that is used to handle asynchronous operations in JavaScript.
+- **Promises**: This is a callback function that is used to handle asynchronous operations in JavaScript. [Check Here](./Asynchronous%20JS//Test/script.js#L50) <!-- line 50 --> or [Check Here](./Asynchronous%20JS//Test/script.js#L102) <!-- line 102 -->
+  - **Promise.all()**: This is a callback function that is used to handle multiple promises at once. [Check Here](./Asynchronous%20JS//Test/script.js#L140) <!-- line 140 -->
+  - **Promise.race()**: This is a callback function that is used to handle multiple promises and return the result of the first promise that resolves. [Check Here](./Asynchronous%20JS//Test/script.js#L141) <!-- line 141-->
+  - **Fetch API**: This is a callback function that is used to make network requests to a server and handle the response. This follows the same principle as **Promises**.
 - **Async/Await**: This is a callback function that is used to handle asynchronous operations in JavaScript.
