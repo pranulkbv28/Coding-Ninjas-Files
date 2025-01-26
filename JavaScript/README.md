@@ -1366,5 +1366,26 @@ greet(sayBye);
 - **Promises**: This is a callback function that is used to handle asynchronous operations in JavaScript. [Check Here](./Asynchronous%20JS//Test/script.js#L50) <!-- line 50 --> or [Check Here](./Asynchronous%20JS//Test/script.js#L102) <!-- line 102 -->
   - **Promise.all()**: This is a callback function that is used to handle multiple promises at once. [Check Here](./Asynchronous%20JS//Test/script.js#L140) <!-- line 140 -->
   - **Promise.race()**: This is a callback function that is used to handle multiple promises and return the result of the first promise that resolves. [Check Here](./Asynchronous%20JS//Test/script.js#L141) <!-- line 141-->
-  - **Fetch API**: This is a callback function that is used to make network requests to a server and handle the response. This follows the same principle as **Promises**.
+  - **Fetch API**: This is a callback function that is used to make network requests to a server and handle the response. This follows the same principle as **Promises**. [Check Here](./Asynchronous%20JS//User%20Card%20Pt.2/script.js#L1) <!-- line 1 -->
+    - **.blob()**: method of the Response object is used to extract binary data like images or files.
+    - **.json()**: method of the Response object is used to extract JSON data.
+    - **.text()**: method of the Response object is used to extract text data.
+    - **status**: property of the Response object contains the HTTP status code of the network response
+    - **ok**: property of the Response object is a boolean that indicates whether the response was successful.
+    - **Request Type**: If you want to **method specific** request type, you can use the `method` property in the `fetch()` method.
+
+    ```javascript
+    fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        title: 'foo',
+        body: 'bar',
+        userId: 1
+      })
+    })
+    ```
+
 - **Async/Await**: This is a callback function that is used to handle asynchronous operations in JavaScript.
