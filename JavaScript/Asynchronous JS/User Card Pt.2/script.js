@@ -19,16 +19,54 @@ function getDetails(id) {
   fetch(`https://dummyjson.com/users/${id}`)
     .then((res) => {
       if (!res.ok) {
-        throw new Error(`HTTP error! status: ${res.status}`);
+        throw new Error("No such id exists");
       }
       return res.json();
     })
     .then((userData) => {
       console.log(userData);
+      displayUser(userData);
+      return fetch(`https://dummyjson.com/users/${id - 1}`);
+    })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("No previous id exists");
+      }
+      return res.json();
+    })
+    .then((userData) => {
+      console.log(userData);
+      displayUser(userData, "afterbegin", "other");
+      return fetch(`https://dummyjson.com/users/${id + 1}`);
+    })
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("No previous id exists");
+      }
+      return res.json();
+    })
+    .then((userData) => {
+      console.log(userData);
+      displayUser(userData, "beforeend", "other");
+      // return fetch(`https://dummyjson.com/users/${id + 1}`);
     })
     .catch((err) => {
       console.error("Error fetching user details:", err);
     });
+}
+
+function displayUser(userData, pos = "beforeend", className = "") {
+  const card = `
+      <div class="user-card ${className}">
+        <img src=${userData.image} alt="Profile Image" />
+        <h3>${userData.firstName}</h3>
+        <h3>${userData.lastName}</h3>
+        <p class="email">${userData.email}</p>
+        <button class="btn">View Profile</button>
+      </div>
+    `;
+
+  divEle.insertAdjacentHTML(pos, card);
 }
 
 getDetails(2);
@@ -77,17 +115,3 @@ getDetails(2);
 //     });
 //   });
 // });
-
-// function displayUser(userData, pos = "beforeend", className = "") {
-//   const card = `
-//     <div class="user-card ${className}">
-//       <img src=${userData.image} alt="Profile Image" />
-//       <h3>${userData.firstName}</h3>
-//       <h3>${userData.lastName}</h3>
-//       <p class="email">${userData.email}</p>
-//       <button class="btn">View Profile</button>
-//     </div>
-//   `;
-
-//   divEle.insertAdjacentHTML(pos, card);
-// }

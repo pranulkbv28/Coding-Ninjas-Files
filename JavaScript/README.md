@@ -1302,6 +1302,12 @@ document.getElementById('parent').addEventListener('click', function(event) {
 }, true); // here, the 3rd parameter is set to true, which means the event is captured
 ```
 
+## Error Handling
+
+- **Error Handling** is the process of catching errors that occur during the execution of a program and taking appropriate action to handle them.
+- **Error Handling** in `JavaScript` can be done using the `try`, `catch`, and `finally` blocks.
+- [Check Here](./Asynchronous%20JS/User%20Card%20Pt.2/script.js#L22) <!-- line 22 -->
+
 ## Asynchronous JavaScript
 
 ### Some Async Functions
