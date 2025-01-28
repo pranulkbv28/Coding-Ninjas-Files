@@ -21,8 +21,6 @@ body {
 
 #player1 {
   width: 450px;
-  /* padding: 20px; */
-  /* padding-bottom: 0px; */
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -39,25 +37,18 @@ body {
 
 #player2 {
   width: 400px;
-  /* padding: 20px; */
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* #card2 img {
-  width: 150px;
-  height: 150px;
-  padding-left: 60px;
-  object-fit: cover;
-    border-radius: 50%;
-} */
 .card_header {
   background-color: #ddd;
   padding: 8px;
   margin-bottom: 10px;
 }
+
 #abilities {
   list-style: none;
   padding: 20px;
@@ -86,7 +77,6 @@ body {
 #name {
   margin-top: 30px;
   padding-left: 20px;
-  /* font-weight:300; */
   font-size: larger;
   font-style: italic;
 }
