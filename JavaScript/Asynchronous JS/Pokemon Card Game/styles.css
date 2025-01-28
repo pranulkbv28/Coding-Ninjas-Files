@@ -29,7 +29,8 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#card1 img {
+#card1 img,
+#card2 img {
   width: 250px;
   height: 250px;
   text-align: center;
@@ -45,14 +46,14 @@ body {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#card2 img {
+/* #card2 img {
   width: 150px;
   height: 150px;
   padding-left: 60px;
-  /* object-fit: cover;
-    border-radius: 50%; */
-}
-#card_header {
+  object-fit: cover;
+    border-radius: 50%;
+} */
+.card_header {
   background-color: #ddd;
   padding: 8px;
   margin-bottom: 10px;
