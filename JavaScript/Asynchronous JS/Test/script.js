@@ -139,3 +139,14 @@
 
 // Promise.all([promise1, promise2]).then((results) => console.log(results));
 // Promise.race([promise1, promise2]).then((results) => console.log(results));
+
+// const asyncfunc = async () => {
+//   const result = await new Promise((resolve, reject) =>
+//     setTimeout(() => resolve("Success"), 1000)
+//   );
+
+//   return result;
+// };
+
+// const output = asyncfunc();
+// console.log(output); // Promise {<pending>}

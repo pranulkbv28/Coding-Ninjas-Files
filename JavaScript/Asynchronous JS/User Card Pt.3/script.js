@@ -1,15 +1,6 @@
 const divEle = document.querySelector(".card-container");
 
-function getUser(url) {
-  return fetch(url).then((res) => {
-    if (!res.ok) {
-      throw new Error("No such id exists");
-    }
-    return res.json();
-  });
-}
-
-function getDetails(id) {
+async function getDetails(id) {
   // const request = fetch(`https://dummyjson.com/users/${id}`);
   // console.log(request);
 
@@ -23,26 +14,18 @@ function getDetails(id) {
   //   console.log(data);
   // });
 
-  // more simplified
+  try {
+    const response = await fetch(`https://dummyjson.com/users/${id}`);
+    if (!response.ok) {
+      throw new Error("Could not fetch the data for that resource");
+    }
 
-  getUser(`https://dummyjson.com/users/${id}`)
-    .then((userData) => {
-      console.log(userData);
-      displayUser(userData);
-      return getUser(`https://dummyjson.com/users/${id - 1}`);
-    })
-    .then((userData) => {
-      console.log(userData);
-      displayUser(userData, "afterbegin", "other");
-      return getUser(`https://dummyjson.com/users/${id + 1}`);
-    })
-    .then((userData) => {
-      console.log(userData);
-      displayUser(userData, "beforeend", "other");
-    })
-    .catch((err) => {
-      console.error("Error fetching user details:", err);
-    });
+    const userData = await response.json();
+
+    displayUser(userData);
+  } catch (error) {
+    console.log("Error: ", error);
+  }
 }
 
 function displayUser(userData, pos = "beforeend", className = "") {

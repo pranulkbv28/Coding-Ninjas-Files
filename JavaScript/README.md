@@ -1308,6 +1308,16 @@ document.getElementById('parent').addEventListener('click', function(event) {
 - **Error Handling** in `JavaScript` can be done using the `try`, `catch`, and `finally` blocks.
 - [Check Here](./Asynchronous%20JS/User%20Card%20Pt.2/script.js#L22) <!-- line 22 -->
 
+```javascript
+try {
+  // code that may throw an error
+} catch (error) {
+  // code to handle the error
+} finally {
+  // code that will always run
+}
+```
+
 ## Asynchronous JavaScript
 
 ### Some Async Functions
@@ -1395,3 +1405,11 @@ greet(sayBye);
     ```
 
 - **Async/Await**: This is a callback function that is used to handle asynchronous operations in JavaScript.
+  - **Async**: The `async` keyword is used to define an asynchronous function.
+  - **Await**: The `await` keyword is used to pause the execution of an asynchronous function until a promise is settled.
+
+### Event Loop
+
+- The `Event Loop` is a mechanism in `JavaScript` that allows the execution of multiple tasks in a non-blocking manner.
+- The `Event Loop` is responsible for handling the execution of tasks in the `JavaScript` runtime environment.
+- The `Event Loop` continuously checks the `Call Stack` and the `Callback Queue` to determine which tasks to execute next.
