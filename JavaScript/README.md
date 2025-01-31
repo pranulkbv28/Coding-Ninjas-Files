@@ -18,7 +18,9 @@
 - [JSON](#json)
 - [Copies](#copies)
 - [DOM](#dom)
+- [Error Handling in JavaScript](#error-handling)
 - [Asynchronous JavaScript](#asynchronous-javascript)
+- [Modules in JavaScript](#modules-in-javascript)
 
 ## Introduction
 
@@ -1413,3 +1415,22 @@ greet(sayBye);
 - The `Event Loop` is a mechanism in `JavaScript` that allows the execution of multiple tasks in a non-blocking manner.
 - The `Event Loop` is responsible for handling the execution of tasks in the `JavaScript` runtime environment.
 - The `Event Loop` continuously checks the `Call Stack` and the `Callback Queue` to determine which tasks to execute next.
+
+## Modules in JavaScript
+
+### Breaking code in multiple files
+
+- Usually codebases have multiple files and it is not a good practice to write all the code in a single file.
+- The separation of code into multiple files is called **modularization**.
+- The seperation is usally based on the functionality of the code.
+- Similar functionalities are grouped together in a single file.
+
+### What are modules
+
+- They are self contained pieces of code that can be reused.
+- Allows to break the code into smaller pieces.
+- Makes the code more organized and easier to maintain.
+
+### Types of Modules
+
+- **IIFE Module Pattern**: This is a module pattern that uses an `Immediately Invoked Function Expression` **(IIFE)** to create a module.
