@@ -1,4 +1,4 @@
-# Coding Ninjas Files
+# Coding Ninjas File
 
 ## Why this Repository?
 
